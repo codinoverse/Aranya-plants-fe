@@ -1,0 +1,21 @@
+.about-section {
+  background: #fff;
+  border-radius: 2rem;
+  padding: 2.5rem 1rem;
+  margin-bottom: 2rem;
+}
+.about-section .card {
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.08);
+}
+.about-section .team-member {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about-section .team-member img {
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+} 

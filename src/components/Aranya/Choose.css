@@ -1,0 +1,30 @@
+.choose-section {
+  background: #fff;
+  border-radius: 2rem;
+  padding: 7.5rem 1rem 2.5rem 1rem;
+  margin-bottom: 2rem;
+}
+.choose-section .icon-bg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e0f7ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+.choose-section .img-fluid {
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 16px 0 rgba(44, 183, 78, 0.10);
+}
+@media (max-width: 767px) {
+  .choose-section {
+    padding: 6rem 0.5rem 1.5rem 0.5rem;
+  }
+  .choose-section .img-fluid {
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 16px 0 rgba(44, 183, 78, 0.10);
+  }
+} 

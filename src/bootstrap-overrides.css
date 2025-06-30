@@ -1,0 +1,133 @@
+/* Bootstrap overrides and custom styles for Aranya project */
+
+body {
+  background: #f8fafc;
+  color: #222;
+  font-family: 'Inter', sans-serif;
+}
+
+.leaf-bg {
+  background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+}
+
+.hero-section {
+  background: linear-gradient(120deg, #e0f7ef 0%, #f8fafc 100%);
+  border-radius: 2rem;
+  box-shadow: 0 4px 32px 0 rgba(44, 183, 78, 0.08);
+  padding: 3rem 1.5rem 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  border-radius: 1.25rem !important;
+  box-shadow: 0 2px 16px 0 rgba(44, 183, 78, 0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover {
+  box-shadow: 0 8px 32px 0 rgba(44, 183, 78, 0.16);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.btn-success, .btn-success:focus {
+  background: linear-gradient(90deg, #059669 0%, #047857 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 2rem;
+  box-shadow: 0 2px 8px 0 rgba(44, 183, 78, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-success:hover {
+  background: linear-gradient(90deg, #047857 0%, #059669 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px 0 rgba(44, 183, 78, 0.16);
+}
+
+.btn-outline-success {
+  border-radius: 2rem;
+  font-weight: 600;
+}
+
+.badge {
+  font-size: 0.85em;
+  padding: 0.5em 0.9em;
+  border-radius: 1rem;
+}
+
+input.form-control, .form-select {
+  border-radius: 2rem;
+  border: 1px solid #d1fae5;
+  background: #f8fafc;
+  font-size: 1em;
+  padding: 0.75em 1.25em;
+}
+input.form-control:focus, .form-select:focus {
+  border-color: #059669;
+  box-shadow: 0 0 0 0.2rem rgba(44, 183, 78, 0.15);
+}
+
+.vr-mode {
+  transform: scale(1.04) rotateY(2deg);
+  box-shadow: 0 0 32px 0 rgba(44, 183, 78, 0.18);
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+
+.parallax-leaf {
+  opacity: 0.12 !important;
+  filter: blur(2px) !important;
+}
+
+footer {
+  background: linear-gradient(90deg, #047857 0%, #059669 100%);
+  color: #fff;
+  border-radius: 2rem 2rem 0 0;
+  box-shadow: 0 -2px 16px 0 rgba(44, 183, 78, 0.08);
+}
+
+footer .nav-link, footer .text-secondary {
+  color: #e0f7ef !important;
+}
+footer .nav-link:hover {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e0f7ef;
+}
+::-webkit-scrollbar-thumb {
+  background: #b7e4c7;
+  border-radius: 4px;
+}
+
+/* Section titles */
+section h2, section h3, section h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .card {
+    border-radius: 1rem !important;
+  }
+  footer {
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+}
+
+.highlighted-section {
+  outline: 2px solid #3F20FB;
+  background-color: rgba(63, 32, 251, 0.1);
+}
+
+.edit-button {
+  position: absolute;
+  z-index: 1000;
+} 

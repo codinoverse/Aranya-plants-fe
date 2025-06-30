@@ -1,0 +1,222 @@
+.Add-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.Add-btn:hover {
+    background-color: rgb(2, 104, 2);
+    transform: scale(1.03);
+}
+
+.Add-btn:active {
+    background-color: rgb(1, 80, 1);
+    transform: scale(0.98);
+}
+
+.Add-btn:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.heart-icon {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.heart-icon.filled {
+    color: #ef4444;
+}
+
+.heart-icon.outlined {
+    font-weight: 400;
+    color: #af9c9c;
+}
+
+.heart-icon:hover {
+    transform: scale(1.1);
+    color: #f51900;
+}
+
+.pots-section {
+  background: #fff;
+  border-radius: 2rem;
+  padding: 2.5rem 1rem;
+  margin-bottom: 2rem;
+}
+.pots-section .card {
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.pots-section .card:hover {
+  box-shadow: 0 8px 32px 0 rgba(44, 183, 78, 0.16);
+  transform: translateY(-4px) scale(1.02);
+}
+.pots-section .card-img-top {
+  border-radius: 1rem 1rem 0 0;
+  object-fit: cover;
+  height: 180px;
+}
+.pots-section .sidebar {
+  background: #e0f7ef;
+  border-radius: 1.25rem;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.06);
+}
+
+.pots-pagination {
+  --bs-pagination-padding-x: 1rem;
+  --bs-pagination-padding-y: 0.5rem;
+  --bs-pagination-font-size: 1.08rem;
+  --bs-pagination-color: #232e39;
+  --bs-pagination-bg: #fff;
+  --bs-pagination-border-width: 0;
+  --bs-pagination-border-radius: 1.5rem;
+  --bs-pagination-hover-color: #059669;
+  --bs-pagination-hover-bg: #f8fafc;
+  --bs-pagination-active-color: #fff;
+  --bs-pagination-active-bg: linear-gradient(90deg, #059669 0%, #34d399 100%);
+  --bs-pagination-active-border-color: #059669;
+  --bs-pagination-focus-box-shadow: 0 0 0 2px #05966933;
+  display: flex;
+  gap: 0.5rem;
+}
+.pots-pagination .page-item {
+  margin: 0 0.15rem;
+}
+.pots-pagination .page-link {
+  border-radius: 1.5rem !important;
+  border: none;
+  background: var(--bs-pagination-bg);
+  color: var(--bs-pagination-color);
+  font-weight: 600;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 6px 0 rgba(44, 183, 78, 0.06);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+.pots-pagination .page-link:hover, .pots-pagination .page-link:focus {
+  background: var(--bs-pagination-hover-bg);
+  color: var(--bs-pagination-hover-color);
+  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.10);
+  transform: scale(1.08);
+}
+.pots-pagination .page-item.active .page-link {
+  background: var(--bs-pagination-active-bg);
+  color: var(--bs-pagination-active-color);
+  font-weight: 700;
+  box-shadow: 0 4px 16px 0 rgba(44, 183, 78, 0.16);
+  border: none;
+  transform: scale(1.12);
+}
+.pots-pagination .page-item.disabled .page-link {
+  background: #f3f4f6;
+  color: #b7c5d3;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.pots-section .sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.pots-section .form-select {
+  border-radius: 2rem;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  font-size: 1.08em;
+  padding: 0.5em 2.2em 0.5em 1em;
+  box-shadow: 0 1px 6px 0 rgba(44, 183, 78, 0.04);
+  transition: border 0.18s, box-shadow 0.18s, transform 0.22s cubic-bezier(.4,1.4,.6,1);
+  color: #232e39;
+  font-weight: 600;
+  appearance: none;
+  position: relative;
+  outline: none;
+}
+.pots-section .form-select:focus, .pots-section .form-select:hover {
+  border-color: #b7c5d3;
+  box-shadow: 0 0 0 2px #b7c5d344, 0 4px 24px 0 rgba(44, 183, 78, 0.08);
+  background: #f8fafc;
+  color: #232e39;
+  transform: scale(1.025);
+}
+.pots-section .form-select option {
+  background: #fff;
+  color: #232e39;
+  font-size: 1.08em;
+  font-weight: 500;
+  padding: 0.7em 1em;
+  transition: background 0.18s, color 0.18s;
+}
+.pots-section .form-select option:checked, .pots-section .form-select option:focus {
+  background: #f3f4f6;
+  color: #232e39;
+  font-weight: 700;
+}
+.pots-section .form-select::-ms-expand {
+  display: none;
+}
+.pots-section .form-select::after {
+  content: '\f078';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b7c5d3;
+  pointer-events: none;
+  font-size: 1em;
+  transition: color 0.18s;
+}
+.pots-section .form-select:focus::after, .pots-section .form-select:hover::after {
+  color: #232e39;
+}
+
+.pots-section .btn-group .btn {
+  border-radius: 50% !important;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #232e39;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  box-shadow: 0 1px 6px 0 rgba(44, 183, 78, 0.04);
+  margin-left: 0.2rem;
+  transition: background 0.18s, color 0.18s, border 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+.pots-section .btn-group .btn.active, .pots-section .btn-group .btn:focus {
+  background: #232e39;
+  color: #fff;
+  border-color: #232e39;
+  font-weight: 700;
+  box-shadow: 0 2px 8px 0 rgba(44, 183, 78, 0.10);
+  transform: scale(1.12);
+}
+.pots-section .btn-group .btn:hover {
+  background: #f3f4f6;
+  color: #059669;
+  border-color: #b7c5d3;
+  transform: scale(1.08);
+}

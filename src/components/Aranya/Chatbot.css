@@ -1,0 +1,21 @@
+#chatbot-toggle {
+  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.18);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+#chatbot-toggle:hover {
+  box-shadow: 0 8px 32px 0 rgba(44, 183, 78, 0.24);
+  transform: scale(1.08);
+}
+#chatbot-window {
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px 0 rgba(44, 183, 78, 0.18);
+  overflow: hidden;
+}
+#chat-messages .bg-success.bg-opacity-10 {
+  background: #e0f7ef !important;
+  color: #198754;
+}
+#chat-messages .bg-light {
+  background: #f8fafc !important;
+  color: #333;
+} 

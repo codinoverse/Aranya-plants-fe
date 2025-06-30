@@ -1,0 +1,91 @@
+.hero-section {
+  background: linear-gradient(120deg, #e0f7ef 0%, #f8fafc 100%);
+  border-radius: 2rem;
+  box-shadow: 0 4px 32px 0 rgba(44, 183, 78, 0.08);
+  padding: 7.5rem 1.5rem 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.hero-section h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.hero-section .lead {
+  font-size: 1.25rem;
+  color: #4b5563;
+}
+.hero-section .btn-success {
+  font-size: 1.1rem;
+  padding: 0.75rem 2.5rem;
+  border-radius: 2rem;
+}
+.hero-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff8;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 16px 0 rgba(44, 183, 78, 0.10);
+  max-width: 340px;
+  margin: 0 auto;
+}
+.hero-img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 16px 0 rgba(44, 183, 78, 0.10);
+  animation: fadein 1.2s cubic-bezier(.39,.58,.57,1) both;
+}
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 6rem 0.5rem 1.5rem 0.5rem;
+  }
+  .hero-section h2 {
+    font-size: 2rem;
+  }
+  .hero-img {
+    width: 180px;
+    height: 180px;
+  }
+  .hero-img-wrapper {
+    max-width: 200px;
+  }
+}
+/* Fade-in animation */
+@keyframes fadein {
+  0% { opacity: 0; transform: translateY(32px) scale(0.98); }
+  100% { opacity: 1; transform: none; }
+}
+.animate-fadein {
+  opacity: 0;
+  animation: fadein 1.2s cubic-bezier(.39,.58,.57,1) both;
+}
+.animate-fadein[style*="animation-delay:0.2s"] {
+  animation-delay: 0.2s;
+}
+.animate-fadein[style*="animation-delay:0.4s"] {
+  animation-delay: 0.4s;
+}
+/* Floating leaf animations */
+.floating-leaf {
+  animation: floatLeaf 5s ease-in-out infinite alternate;
+}
+.floating-leaf2 {
+  animation: floatLeaf2 7s ease-in-out infinite alternate;
+}
+.floating-leaf3 {
+  animation: floatLeaf3 6s ease-in-out infinite alternate;
+}
+@keyframes floatLeaf {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(18px) rotate(8deg); }
+}
+@keyframes floatLeaf2 {
+  0% { transform: translateY(0) rotate(-12deg); }
+  100% { transform: translateY(-16px) rotate(-18deg); }
+}
+@keyframes floatLeaf3 {
+  0% { transform: translateY(0) rotate(90deg); }
+  100% { transform: translateY(12px) rotate(100deg); }
+} 

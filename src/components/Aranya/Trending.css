@@ -1,0 +1,33 @@
+.trending-section {
+  background: #f8fafc;
+  border-radius: 2rem;
+  padding: 7.5rem 1rem 2.5rem 1rem;
+  margin-bottom: 2rem;
+}
+.trending-section .card {
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.trending-section .card:hover {
+  box-shadow: 0 8px 32px 0 rgba(44, 183, 78, 0.16);
+  transform: translateY(-4px) scale(1.02);
+}
+.trending-section .badge {
+  font-size: 0.9em;
+  border-radius: 1rem;
+  padding: 0.4em 1em;
+}
+.trending-section .card-img-top {
+  border-radius: 1rem 1rem 0 0;
+  object-fit: cover;
+  height: 180px;
+}
+@media (max-width: 767px) {
+  .trending-section {
+    padding: 6rem 0.5rem 1.5rem 0.5rem;
+  }
+  .trending-section .card {
+    border-radius: 1rem !important;
+  }
+} 
