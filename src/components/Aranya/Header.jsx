@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
 function Header({ toggleVrMode }) {
@@ -69,7 +69,9 @@ function Header({ toggleVrMode }) {
             >
               <i className="fas fa-vr-cardboard"></i>
             </button>
+            <Link to={"/cart"}>
             <i className="fas fa-shopping-cart fa-lg text-secondary ms-2 cursor-pointer" title="Cart"></i>
+            </Link>
           </div>
         </div>
       </nav>
