@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from '../Aranya/Header.jsx';
 import Footer from '../Aranya/Footer.jsx';
 import CareSection from './Care.jsx';
+import Chatbot from '../Aranya/Chatbot.jsx';
 
 function CareDashboard() {
     const [vrMode, setVrMode] = useState(false);
@@ -28,6 +29,7 @@ function CareDashboard() {
             <div className='mt-5' style={{marginTop:'66px'}}>
                 <CareSection />
             </div>
+            <Chatbot/>
             <Footer />
         </div>
     );

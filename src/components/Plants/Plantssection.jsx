@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Header from '../Aranya/Header';
 import Plantlist from './Plantslist';
+import Chatbot from '../Aranya/Chatbot';
+import Footer from '../Aranya/Footer';
 
 
 
@@ -29,6 +31,10 @@ const Plantsection = () => {
       <div className='mt-5' style={{marginTop:'75px'}}>
         <Plantlist />
       </div>
+
+      <Chatbot/>
+      <Footer/>
+
       
     </div>
   );

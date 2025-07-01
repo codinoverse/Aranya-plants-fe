@@ -221,7 +221,6 @@ function Plantlist() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

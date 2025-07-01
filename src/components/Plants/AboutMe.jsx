@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from '../Aranya/Header.jsx';
 import Footer from '../Aranya/Footer.jsx';
 import PlantAboutPage from './About.jsx';
+import Chatbot from '../Aranya/Chatbot.jsx';
 
 function AboutMe() {
     const [vrMode, setVrMode] = useState(false);
@@ -28,6 +29,7 @@ function AboutMe() {
             <div className='mt-5' style={{ marginTop: '66px' }}>
                 <PlantAboutPage/>
             </div>
+            <Chatbot/>
             <Footer />
         </div>
     );

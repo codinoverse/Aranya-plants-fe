@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from '../Aranya/Header.jsx';
 import Footer from '../Aranya/Footer.jsx';
 import PotsSection from './PotsSection.jsx';
+import Chatbot from '../Aranya/Chatbot.jsx';
 
 function Potsdashboard() {
     const [vrMode, setVrMode] = useState(false);
@@ -28,6 +29,7 @@ function Potsdashboard() {
             <div className='mt-5' style={{marginTop:'66px'}}>
                 <PotsSection />
             </div>
+            <Chatbot/>
             <Footer />
         </div>
     );
