@@ -25,21 +25,21 @@ function Hero({ vrMode }) {
               Experience plants like never before with AI-powered search, VR visualization, and expert care guidance.
             </p>
             <div className="d-flex flex-column flex-sm-row gap-3 mb-4 animate-fadein" style={{animationDelay:'0.4s'}}>
-              <div className="position-relative flex-grow-1">
+              <div className="position-relative flex-grow-1v d-flex">
                 <input
                   type="text"
                   placeholder="Search plants..."
-                  className="form-control form-control-lg rounded-pill pe-5"
+                  className="form-control form-control-lg rounded-pill pe-5 search-input"
                 />
-                <i className="fas fa-search position-absolute end-0 top-50 translate-middle-y text-secondary me-3"></i>
+                <i className="search-icon fas fa-search position-absolute end-0 top-50 translate-middle-y text-secondary me-3"></i>
               </div>
-              <button className="btn btn-success btn-lg rounded-pill fw-semibold">
-                Explore Now
+              <button className="btn btn-success btn-lg  fw-semibold exp-main-btn">
+                <span> Explore </span>
               </button>
             </div>
           </div>
           <div className="col-md-6 d-flex justify-content-center align-items-center mb-4 mb-md-0">
-            <div className={`hero-img-wrapper bg-white bg-opacity-50 rounded-4 p-3 p-md-4 ${vrMode ? 'vr-mode' : ''}`}>
+            <div className={`hero-img-wrapper hero-img" bg-white bg-opacity-50 rounded-4 p-3 p-md-4 ${vrMode ? 'vr-mode' : ''}`}>
               <img
                 className="hero-img animate-fadein"
                 src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c3c186f2c9-aa895749fb0959328c27.png"
