@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../Aranya/Footer';
 import "./Plantslist.css"
 
 function Plantlist() {

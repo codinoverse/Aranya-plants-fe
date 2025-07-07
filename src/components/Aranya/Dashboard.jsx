@@ -32,7 +32,7 @@ function Dashboard() {
         <>
             <div className="leaf-bg" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)' }}>
                 <Header toggleVrMode={toggleVrMode} />
-                <div  style={{"marginTop":"94px"}}>
+                <div style={{ "marginTop": "94px" }}>
                     <Hero vrMode={vrMode} />
                 </div>
                 <AIFeatures vrMode={vrMode} />
