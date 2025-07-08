@@ -5,6 +5,7 @@ import Potsdashboard from './components/Plants/PotsDashboard';
 import CareDashboard from './components/Plants/CareDashboard';
 import AboutMe from './components/Plants/AboutMe';
 import CartDashboard from './components/Aranya/CartDashboard';
+import ProductCard from './components/Aranya/ProductCard';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/care' element={<CareDashboard />} />
         <Route path='/aboutme' element={<AboutMe />} />
         <Route path='/cart' element={<CartDashboard />} />
+        <Route path="/product/:productId" element={<ProductCard />} />
       </Routes>
     </Router>
   );

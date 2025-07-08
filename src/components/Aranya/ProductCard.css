@@ -1,0 +1,590 @@
+/* PlantHub.css */
+
+/* Import Bootstrap 5 and FontAwesome */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Global Styles */
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Hide scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Container */
+.planthub-container {
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.planthub-header {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+.planthub-header .container {
+  max-width: 1200px;
+}
+
+.nav-link {
+  color: #374151;
+  text-decoration: none;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #059669;
+}
+
+.icon-button {
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.icon-button:hover {
+  color: #059669;
+}
+
+/* Product Card Styles */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+/* Gallery Styles */
+.gallery-container {
+  position: relative;
+}
+
+.gallery-wrapper {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+}
+
+.gallery-image:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 10;
+}
+
+.gallery-btn:hover {
+  background-color: #ffffff;
+}
+
+.gallery-btn-left {
+  left: 0.5rem;
+}
+
+.gallery-btn-right {
+  right: 0.5rem;
+}
+
+.gallery-btn i {
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+/* Product Details */
+.product-details {
+  padding: 1rem 0;
+}
+
+.product-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.product-subtitle {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+/* Rating */
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stars {
+  color: #fbbf24;
+}
+
+.stars i {
+  margin-right: 0.125rem;
+}
+
+.rating-text {
+  color: #6b7280;
+}
+
+/* Price */
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.price-current {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.price-old {
+  font-size: 1.25rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.discount-badge {
+  background-color: #fef2f2;
+  color: #dc2626;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Coupon */
+.coupon-container {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.coupon-container i {
+  color: #d97706;
+}
+
+.coupon-container span {
+  color: #92400e;
+  font-weight: 500;
+}
+
+/* Gift Container */
+.gift-container {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.gift-container i {
+  color: #2563eb;
+}
+
+.gift-container span {
+  color: #1d4ed8;
+  font-weight: 500;
+}
+
+/* Size Selection */
+.size-selection {
+  margin-bottom: 1.5rem;
+}
+
+.size-selection h6 {
+  color: #111827;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.size-options {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.size-btn {
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #374151;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.size-btn:hover {
+  border-color: #059669;
+}
+
+.size-btn-active {
+  border: 2px solid #059669;
+  background-color: #ecfdf5;
+  color: #047857;
+}
+
+/* Color Selection */
+.color-selection {
+  margin-bottom: 1.5rem;
+}
+
+.color-selection h6 {
+  color: #111827;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.color-options {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.color-btn {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.color-btn:hover {
+  border-color: #059669;
+}
+
+.color-btn-active {
+  border-color: #111827;
+}
+
+/* Action Buttons */
+.action-buttons {
+  margin-bottom: 1.5rem;
+}
+
+/* Delivery Info */
+.delivery-info {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.delivery-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.delivery-item span {
+  color: #374151;
+}
+
+/* Address Section */
+.address-section {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.address-section input {
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+}
+
+.address-section input:focus {
+  outline: none;
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+/* Membership Section */
+.membership-section {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  color: #ffffff;
+}
+
+.membership-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.membership-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.membership-card h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.membership-card p {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+.membership-section .btn-light {
+  background-color: #ffffff;
+  color: #059669;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s;
+}
+
+.membership-section .btn-light:hover {
+  background-color: #f3f4f6;
+}
+
+/* Sidebar */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Care Tips Card */
+.care-tips-card {
+  background-color: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.care-tips-image {
+  width: 100%;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.care-tips-title {
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 0.5rem;
+}
+
+.care-tips-text {
+  color: #047857;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/* Featured Products */
+.featured-products {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.featured-title {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.featured-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.featured-item:last-child {
+  margin-bottom: 0;
+}
+
+.featured-image {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.featured-details h6 {
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.featured-price {
+  color: #059669;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* Newsletter */
+.newsletter-card {
+  background-color: #111827;
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.newsletter-card h6 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-card p {
+  color: #d1d5db;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.newsletter-input::placeholder {
+  color: #9ca3af;
+}
+
+.newsletter-input:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #059669;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery-image {
+    height: 16rem;
+  }
+  
+  .product-title {
+    font-size: 1.5rem;
+  }
+  
+  .price-current {
+    font-size: 1.5rem;
+  }
+  
+  .price-old {
+    font-size: 1rem;
+  }
+  
+  .size-options {
+    flex-wrap: wrap;
+  }
+  
+  .color-options {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .planthub-header .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    margin: 0 0.5rem;
+  }
+  
+  .gallery-image {
+    height: 12rem;
+  }
+  
+  .product-card {
+    padding: 1rem;
+  }
+  
+  .membership-section {
+    padding: 1rem;
+  }
+  
+  .sidebar-content {
+    margin-top: 2rem;
+  }
+}
