@@ -1,8 +1,8 @@
 
 import './OfferBanner.css';
-import offerImg from "src/assets/offerbanner.png";
-import offerImg1 from "src/assets/offerbanner1.png";
-import offerImg2 from "src/assets/offerbanner3.png";
+import offerImg from '../../assets/offerbanner.png';
+import offerImg1 from '../../assets/offerbanner1.png';
+import offerImg2 from '../../assets/offerbanner3.png';
 
 const OfferBanner = () => {
     return (
