@@ -1,0 +1,39 @@
+.down-banner {
+  width: 100%;
+  background-color: #064d3b;
+  overflow: hidden;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  animation: scrollText 30s linear infinite;
+  width: fit-content;
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.down-banner span {
+  display: inline-block;
+  padding: 0 1.2rem;
+  color: #ffffffcc;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Smooth infinite scroll */
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}

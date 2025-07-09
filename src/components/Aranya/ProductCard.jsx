@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProductCard.css';
-import { products } from './productsData'; // Same data store you used in FeaturedProducts
+import { products } from './productsData'; 
 import Header from './Header';
+import Footer from './Footer';
 
 const ProductCard = () => {
   const { productId } = useParams();
@@ -226,6 +227,7 @@ const ProductCard = () => {
           </aside>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

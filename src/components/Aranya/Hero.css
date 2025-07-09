@@ -96,9 +96,7 @@
   and (max-device-width: 1024px) 
   and (orientation: portrait) {
 
-  .search-input {
-    width: 250px;
-  }
+
   
   .exp-main-btn{
     border-radius: 25%;

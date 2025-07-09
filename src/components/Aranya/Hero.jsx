@@ -21,22 +21,10 @@ function Hero({ vrMode }) {
             <h2 className="display-4 fw-bold text-dark mb-3 animate-fadein">
               Discover Your Perfect <span className="text-success">Green Companion</span>
             </h2>
-            <p className="lead text-secondary mb-4 animate-fadein" style={{animationDelay:'0.2s'}}>
+            <p className="lead text-secondary mb-4 animate-fadein" style={{ animationDelay: '0.2s' }}>
               Experience plants like never before with AI-powered search, VR visualization, and expert care guidance.
             </p>
-            <div className="d-flex flex-column flex-sm-row gap-3 mb-4 animate-fadein" style={{animationDelay:'0.4s'}}>
-              <div className="position-relative flex-grow-1v d-flex">
-                <input
-                  type="text"
-                  placeholder="Search plants..."
-                  className="form-control form-control-lg rounded-pill pe-5 search-input"
-                />
-                <i className="search-icon fas fa-search position-absolute end-0 top-50 translate-middle-y text-secondary me-3"></i>
-              </div>
-              <button className="btn btn-success btn-lg  fw-semibold exp-main-btn">
-                <span> Explore </span>
-              </button>
-            </div>
+          
           </div>
           <div className="col-md-6 d-flex justify-content-center align-items-center mb-4 mb-md-0">
             <div className={`hero-img-wrapper hero-img" bg-white bg-opacity-50 rounded-4 p-3 p-md-4 ${vrMode ? 'vr-mode' : ''}`}>

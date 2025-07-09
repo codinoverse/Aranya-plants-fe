@@ -1,0 +1,54 @@
+/* src/components/OfferBanner.css */
+.offer-banner {
+    background-color: #e0eec7;
+    background-image: url();
+    border: 2px solid #a4e4c0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+    height: 230px;
+}
+
+.text-section {
+    flex: 1;
+    margin-left: 105px;
+}
+
+.discount-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #075e54;
+}
+
+.discount-title span {
+    color: #28a745;
+    font-size: 2.5rem;
+}
+
+.discount-subtitle {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.code-text {
+    font-size: 1rem;
+    background-color: #ccf5e1;
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.img-section {
+    flex-shrink: 0;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    margin-right: 55px;
+}
+
+.banner-img {
+    max-height: 220px;
+    width: auto;
+}
