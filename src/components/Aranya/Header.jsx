@@ -73,7 +73,7 @@ function Header({ toggleVrMode }) {
     <>
       <header id="header" className={`header fixed-top w-100 shadow-sm ${showPlantIdentifier ? 'd-none' : ''}`}>
         <TopBanner />
-        <nav className="navbar navbar-expand-md navbar-light container py-1">
+        <nav className="navbar navbar-expand-lg navbar-light container py-1">
           <NavLink to="/" className="navbar-brand d-flex align-items-center gap-2">
             <img src={Logo} width={"120px"} />
           </NavLink>
