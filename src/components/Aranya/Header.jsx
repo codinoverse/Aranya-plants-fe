@@ -1,10 +1,9 @@
-// src/components/Header.jsx
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import './Header.css';
 import TopBanner from './TopBanner';
-import Logo from "/Aranya_v1/Aranya1/src/assets/logo.png";
+import Logo from "/src/assets/logo.png";
 
 function Header({ toggleVrMode }) {
   const [navOpen, setNavOpen] = useState(false);
