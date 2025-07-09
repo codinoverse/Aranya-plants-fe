@@ -1,8 +1,8 @@
 
 import './OfferBanner.css';
-import offerImg from "/Aranya_v1/Aranya1/src/assets/offerbanner.png";
-import offerImg1 from "/Aranya_v1/Aranya1/src/assets/offerbanner1.png";
-import offerImg2 from "/Aranya_v1/Aranya1/src/assets/offerbanner3.png";
+import offerImg from "src/assets/offerbanner.png";
+import offerImg1 from "src/assets/offerbanner1.png";
+import offerImg2 from "src/assets/offerbanner3.png";
 
 const OfferBanner = () => {
     return (
