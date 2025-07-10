@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import './Header.css';
@@ -12,6 +12,8 @@ function Header({ toggleVrMode }) {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+
 
   const handleFileChange = (e) => {
     setResult(null);
@@ -69,6 +71,21 @@ function Header({ toggleVrMode }) {
     setError("");
   };
 
+  const fullText = "Search plants.....";
+  const [placeholder, setPlaceholder] = useState("");
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPlaceholder(fullText.slice(0, index + 1));
+      setIndex((prevIndex) =>
+        prevIndex + 1 < fullText.length ? prevIndex + 1 : 0
+      );
+    }, 150);
+    return () => clearInterval(interval);
+  }, [index]);
+
+
   return (
     <>
       <header id="header" className={`header fixed-top w-100 shadow-sm ${showPlantIdentifier ? 'd-none' : ''}`}>
@@ -99,29 +116,28 @@ function Header({ toggleVrMode }) {
               <div className="position-relative">
                 <input
                   type="text"
-                  placeholder="Search plants..."
+                  placeholder={placeholder}
                   className="form-control form-control-sm rounded-pill pe-5 search-input"
                 />
-                <i className="search-icon fas fa-search position-absolute end-0 top-50 translate-middle-y text-secondary me-3"></i>
+                <i className="search-icon fas fa-search position-absolute end-0 top-50 translate-middle-y me-3"></i>
               </div>
-              <button className="exp-main-btn">
-                <span>Explore</span>
-              </button>
-              <button className="btn btn-success btn-sm rounded-circle" title="Image Search" onClick={handleImageSearchClick}>
+              <button className="icon-btns btn-sm rounded-circle" title="Image Search" onClick={handleImageSearchClick}>
                 <i className="fas fa-camera"></i>
               </button>
-              <button className="btn btn-primary btn-sm rounded-circle" title="Live Camera" onClick={() => alert('Camera access requested!')}>
+              <button className="icon-btns btn-sm rounded-circle" title="Live Camera" onClick={() => alert('Camera access requested!')}>
                 <i className="fas fa-video"></i>
               </button>
-              <button className="btn btn-secondary btn-sm rounded-circle" title="VR Mode" onClick={toggleVrMode}>
+              <button className="icon-btns btn-sm rounded-circle" title="VR Mode" onClick={toggleVrMode}>
                 <i className="fas fa-vr-cardboard"></i>
               </button>
               <Link to="/cart">
-                <i className="fas fa-shopping-cart fa-lg text-secondary ms-2"></i>
+                <div className='icon-btns btn-sm rounded-circle'>
+                  <i className="fas fa-shopping-cart text-white"></i>
+                </div>
               </Link>
-              <button className="btn btn-secondary btn-sm rounded-circle mx-2">
-                <i className="fa-solid fa-user"></i>
-              </button>
+              <div className='icon-btns btn-sm rounded-circle'>
+                  <i className="fa-solid fa-user"></i>            
+              </div>
             </div>
           </div>
         </nav>

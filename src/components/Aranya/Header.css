@@ -4,6 +4,18 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.search-icon {
+  color: #068135;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.search-icon:hover {
+  color: #045d28; 
+  transform: scale(1.1); 
+}
+
+
 header#header {
   background: #f9fdfc;
   box-shadow: 0 1px 10px rgba(44, 183, 78, 0.08);
@@ -71,6 +83,19 @@ header#header .fa-lg {
   font-size: 0.9rem;
   padding: 0.4rem 1rem;
 }
+
+.icon-btns {
+  background-color: #068135;
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.icon-btns:hover {
+  background-color: #026a2a;
+  transform: scale(1.05);
+}
+
 
 .exp-main-btn {
   background: linear-gradient(145deg, rgb(5, 103, 35), rgba(9, 90, 110, 0.3));
