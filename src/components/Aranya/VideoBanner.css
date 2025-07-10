@@ -1,0 +1,31 @@
+.video-banner {
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-banner video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.7); /* darken the video a bit */
+}
+
+.banner-content {
+  z-index: 2;
+}
+
+.banner-heading {
+  font-size: 3rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.banner-subtext {
+  font-size: 1.5rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.leaf {
+  color: #43a047;
+  font-style: italic;
+}

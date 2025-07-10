@@ -1,6 +1,6 @@
 .down-banner {
   width: 100%;
-  background-color:  #068135;
+  background-color:  #056b2c;
   overflow: hidden;
   height: 40px;
   display: flex;
@@ -23,7 +23,7 @@
 .down-banner span {
   display: inline-block;
   padding: 0 1.2rem;
-  color: #ffffffcc;
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
 }

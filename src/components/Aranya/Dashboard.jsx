@@ -10,6 +10,7 @@ import Trending from './Trending';
 import Choose from './Choose';
 import OfferBanner from './OfferBanner';
 import DownBanner from './DownBanner';
+import VideoBanner from './VideoBanner';
 
 function Dashboard() {
     const [vrMode, setVrMode] = useState(false);
@@ -32,14 +33,20 @@ function Dashboard() {
 
     return (
         <>
-            <div className="leaf-bg" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)' }}>
+            <div className="leaf-bg" >
                 <Header toggleVrMode={toggleVrMode} />
-                <div style={{ "marginTop": "128px"}}>
-                    <OfferBanner/>
-                    <DownBanner/>
-                    <Hero vrMode={vrMode} />
+                <div style={{ "marginTop": "124px" }}>
+                    <OfferBanner />
+                    {/* <Hero vrMode={vrMode} /> */}
                 </div>
-                
+
+                <div style={{marginTop:"-20px"}}>
+                    <DownBanner />
+                </div>
+
+                <div style={{ marginTop: "-1px" }}>
+                    <VideoBanner />
+                </div>
                 <AIFeatures vrMode={vrMode} />
                 <FeaturedProducts vrMode={vrMode} />
                 <Category />

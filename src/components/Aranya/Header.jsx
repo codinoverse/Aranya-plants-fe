@@ -136,7 +136,7 @@ function Header({ toggleVrMode }) {
                 </div>
               </Link>
               <div className='icon-btns btn-sm rounded-circle'>
-                  <i className="fa-solid fa-user"></i>            
+                <i className="fa-solid fa-user"></i>
               </div>
             </div>
           </div>
