@@ -5,7 +5,7 @@ const VideoBanner = () => {
   return (
     <div className="video-banner position-relative text-white">
       <video className="w-100 h-100 object-fit-cover" autoPlay muted loop playsInline>
-        <source src="./Videos/video3.mp4" type="video/mp4" />
+        <source src="./public/videos/video3.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
