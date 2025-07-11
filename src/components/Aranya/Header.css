@@ -11,15 +11,17 @@
 }
 
 .search-icon:hover {
-  color: #045d28; 
-  transform: scale(1.1); 
+  color: #045d28;
+  transform: scale(1.1);
 }
+
 .navbar-brand {
   background-color: #ffffff;
   border-radius: 15px;
   width: 16vh;
   justify-content: center;
 }
+
 .main-logo {
   border-radius: 5px;
   width: 15vh;
@@ -27,7 +29,8 @@
 
 header#header {
   /* background: #f9fdfc; */
-  background-image: url("src/assets/wallpaper1.jpg");
+  background-image: url('../src/assets/wallpaper1.jpg');
+
   box-shadow: 0 1px 10px rgba(44, 183, 78, 0.08);
   border-bottom: 1px solid #e0f7ef;
   padding: 0.3rem 0;
