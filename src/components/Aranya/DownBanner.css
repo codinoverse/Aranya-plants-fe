@@ -1,6 +1,6 @@
 .down-banner {
   width: 100%;
-  background-color:  #056b2c;
+  background-image: url("src/assets/wallpaper1.jpg");
   overflow: hidden;
   height: 40px;
   display: flex;
@@ -33,6 +33,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-33.333%);
   }

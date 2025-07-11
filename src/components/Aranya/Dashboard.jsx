@@ -47,12 +47,12 @@ function Dashboard() {
                 <div style={{ marginTop: "-1px" }}>
                     <VideoBanner />
                 </div>
-                <AIFeatures vrMode={vrMode} />
                 <FeaturedProducts vrMode={vrMode} />
                 <Category />
                 <Trending />
                 <Choose />
                 <Chatbot />
+                <AIFeatures vrMode={vrMode} />
                 <Footer />
             </div>
         </>

@@ -80,7 +80,7 @@ function Header({ toggleVrMode }) {
       setPlaceholder(fullText.slice(0, index + 1));
       setIndex((prevIndex) =>
         prevIndex + 1 < fullText.length ? prevIndex + 1 : 0
-      );
+      );97
     }, 150);
     return () => clearInterval(interval);
   }, [index]);
@@ -92,7 +92,7 @@ function Header({ toggleVrMode }) {
         <TopBanner />
         <nav className="navbar navbar-expand-lg navbar-light container py-1">
           <NavLink to="/" className="navbar-brand d-flex align-items-center gap-2">
-            <img src={Logo} width={"120px"} />
+            <img src={Logo} className='main-logo' width={"120px"} />
           </NavLink>
           <button
             className="navbar-toggler"
