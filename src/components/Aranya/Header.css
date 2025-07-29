@@ -16,30 +16,37 @@
 }
 
 .navbar-brand {
-  background-color: #ffffff;
   border-radius: 15px;
   width: 16vh;
   justify-content: center;
 }
 
-.main-logo {
-  border-radius: 5px;
-  width: 15vh;
+.logo-container {
+  height: 8vh; /* Increase this to make the logo section taller */
+  width: auto; /* Let width be dynamic based on logo image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-header#header {
-  /* background: #f9fdfc; */
-  background-image: url('../src/assets/wallpaper1.jpg');
+.main-logo {
+  max-height: 16vh;
+  width: auto;
+}
 
+
+
+header#header {
+  background-color: white;
   box-shadow: 0 1px 10px rgba(44, 183, 78, 0.08);
-  border-bottom: 1px solid #e0f7ef;
-  padding: 0.3rem 0;
+  border-bottom: 1px solid hsl(0, 0%, 100%);
   z-index: 1051;
 }
 
 header#header .navbar {
   min-height: 56px;
   padding: 0;
+  background-image: url();
 }
 
 header#header .navbar-brand {
@@ -55,12 +62,19 @@ header#header .navbar-toggler {
   border-radius: 0.5rem;
   padding: 0.4rem 0.7rem;
 }
+header#header .navbar-nav  {
+    background-image: url('/src/assets/wallpaper1.jpg');
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+}
 
 header#header .navbar-nav .nav-link {
   color: #ffffff !important;
+  border-radius: 20px;
   font-weight: 600;
   font-size: 1rem;
-  padding: 0.4rem 0.9rem;
+  padding: 0.3rem 0.9rem;
   position: relative;
   transition: all 0.2s;
 }

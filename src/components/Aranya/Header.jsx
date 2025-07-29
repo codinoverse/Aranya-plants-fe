@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import './Header.css';
 import TopBanner from './TopBanner';
-import Logo from "/src/assets/logo.png";
+import Logo from "/src/assets/Website-Logo.svg";
 
 function Header({ toggleVrMode }) {
   const [navOpen, setNavOpen] = useState(false);
@@ -89,10 +89,13 @@ function Header({ toggleVrMode }) {
   return (
     <>
       <header id="header" className={`header fixed-top w-100 shadow-sm ${showPlantIdentifier ? 'd-none' : ''}`}>
+        
         <TopBanner />
         <nav className="navbar navbar-expand-lg navbar-light container py-1">
           <NavLink to="/" className="navbar-brand d-flex align-items-center gap-2">
-            <img src={Logo} className='main-logo' width={"120px"} />
+          <div className='logo-container'>
+            <img src={Logo} className='main-logo' width={"205px"} />
+          </div>
           </NavLink>
           <button
             className="navbar-toggler"
