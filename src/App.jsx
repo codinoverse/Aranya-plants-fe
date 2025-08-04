@@ -13,13 +13,11 @@ import AddressDashboard from './components/AddressManagement/AddressDashboard';
 import CheckOutDashboard from './components/Checkout/CheckoutDashboard';
 import PlantWishListDashboard from './components/PlantWishList/PlantWishListDashboard';
 import CustomerCareDashboard from './components/CustomerSupport/CustomerSupportDashboard';
-import { CartProvider } from './context/CartContext';
 
 
 function App() {
   return (
     <>
-      <CartProvider>
         <Router>
           <Routes>
             <Route path="/" element={<Dashboard />} />
@@ -36,7 +34,6 @@ function App() {
             <Route path='/CustomerSupport' element={<CustomerCareDashboard />} />
           </Routes>
         </Router>
-      </CartProvider>
     </>
   );
 }
