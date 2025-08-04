@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './Header';
 import Chatbot from './Chatbot';
 import Footer from './Footer';
@@ -26,7 +26,7 @@ function CartDashboard() {
     return (
         <>
             <div className="leaf-bg" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)' }}>
-                <Header toggleVrMode={toggleVrMode} />
+               <div className='mb-5'><Header toggleVrMode={toggleVrMode}/> </div> 
                 
                 <Cart/>
                 <Chatbot />

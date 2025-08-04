@@ -186,10 +186,10 @@ function Header({ toggleVrMode }) {
                     <Link to="/checkout" className="dropdown-item">
                       <i className="fas fa-credit-card me-2"></i> Payment Methods
                     </Link>
-                    <div className="dropdown-divider"></div>
-                    <Link to="/settings" className="dropdown-item">
-                      <i className="fas fa-cog me-2"></i> Settings
+                    <Link to="/CustomerSupport" className="dropdown-item">
+                      <i className="fas fa-credit-card me-2"></i> Customer Support
                     </Link>
+                    
                     <div className="dropdown-divider"></div>
                     <button className="dropdown-item logout-btn">
                       <i className="fas fa-sign-out-alt me-2"></i> Logout

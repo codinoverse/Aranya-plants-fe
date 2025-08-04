@@ -1,0 +1,220 @@
+
+.plant-card {
+  /* border: 1px solid #0f6a07; */
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.plant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.plant-image-placeholder {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(45deg, #a8b5c0, #c5d0db);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+}
+
+.heart-icon {
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.heart-icon.liked {
+  color: #dc3545;
+  fill: #dc3545;
+}
+
+.heart-icon:hover {
+  color: #dc3545;
+  transform: scale(1.1);
+}
+
+.category-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.category-item:hover {
+  background-color: #f8f9fa;
+  padding-left: 8px;
+  border-radius: 4px;
+}
+
+.category-item:last-child {
+  border-bottom: none;
+}
+
+.recently-viewed-image {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #dee2e6, #adb5bd);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.form-check-input:checked {
+  background-color: #25fd0d;
+  border-color: #0d6efd;
+}
+
+.Atc {
+  background-color: #257517;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.675rem;
+  border: none;
+  padding: 4px 8px;
+}
+
+.Atc:hover {
+  background-color: #105a00;
+  border-color: none;
+  color: white;
+}
+
+.Atc-outline-primary.active {
+  background-color: #1e5e21;
+  border: none;
+  color: white;
+}
+
+.text-primary {
+  color: #088308 !important;
+}
+
+.badge {
+  font-size: 0.75rem;
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0;
+  }
+  
+  .col-md-3 {
+    padding: 1rem;
+  }
+  
+  .col-md-6 {
+    padding: 1rem;
+  }
+  
+  .plant-image-placeholder {
+    height: 150px;
+    font-size: 0.875rem;
+  }
+  
+  .d-flex.justify-content-between.align-items-center {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .d-flex.align-items-center.gap-3 {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .form-select {
+    width: 100% !important;
+  }
+}
+
+/* Custom scrollbar for sidebar */
+.col-md-3 {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.col-md-3::-webkit-scrollbar {
+  width: 4px;
+}
+
+.col-md-3::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.col-md-3::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.col-md-3::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading state for images */
+.plant-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Focus states for accessibility */
+.btn:focus,
+.form-check-input:focus,
+.form-select:focus {
+  outline: 2px solid #095a04;
+  outline-offset: 2px;
+}
+
+/* Hover effects for interactive elements */
+.btn {
+  transition: all 0.2s ease;
+}
+
+.form-select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
