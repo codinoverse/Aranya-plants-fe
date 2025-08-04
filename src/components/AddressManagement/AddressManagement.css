@@ -1,0 +1,278 @@
+/* AddressManagement.css */
+
+.address-management-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.address-management-card .card-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 24px 16px;
+}
+
+.address-management-card .card-header h5 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.address-management-card .card-body {
+  padding: 24px;
+}
+
+.address-section {
+  margin-bottom: 32px;
+}
+
+.address-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.section-header h6 {
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+  font-size: 16px;
+}
+
+.address-display {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.shipping-address {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.address-info {
+  flex: 1;
+}
+
+.address-info .name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.address-info div {
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+
+.address-info .phone {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.address-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.address-actions .btn {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.address-form-section {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.address-form-section h6 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.form-control,
+.form-select {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-check {
+  margin-top: 8px;
+}
+
+.form-check-input {
+  margin-top: 3px;
+}
+
+.form-check-label {
+  color: #555;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.btn {
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-dark {
+  background-color: #212529;
+  border-color: #212529;
+  color: #ffffff;
+}
+
+.btn-dark:hover {
+  background-color: #1a1e21;
+  border-color: #1a1e21;
+}
+
+.btn-outline-secondary {
+  color: #6c757d;
+  border-color: #6c757d;
+  background-color: transparent;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.btn-outline-primary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+  background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+  background-color: transparent;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.me-2 {
+  margin-right: 0.5rem !important;
+}
+
+.ms-2 {
+  margin-left: 0.5rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .address-management-card .card-body {
+    padding: 16px;
+  }
+  
+  .shipping-address {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .address-actions {
+    align-self: flex-start;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+  }
+}

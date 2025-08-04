@@ -1,5 +1,5 @@
-import React from 'react';
 import './Footer.css';
+import Logo from "/src/assets/Website-Logo.svg";
 
 function Footer() {
   return (
@@ -8,8 +8,10 @@ function Footer() {
         <div className="row g-4">
           <div className="col-md-3">
             <div className="d-flex align-items-center gap-2 mb-3">
-              <i className="fas fa-leaf footer-brand" style={{fontSize:'1.7rem'}}></i>
-              <span className="footer-brand">Aranya</span>
+              <div className='logo-container'>
+                <img src={Logo} className="footer-logo white-logo" width="205px" />
+
+              </div>
             </div>
             <p className="text-secondary mb-0">Your ultimate destination for plants, pots, and AI-powered plant care.</p>
           </div>

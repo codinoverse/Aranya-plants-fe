@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Header from './Header';
-import Hero from './Hero';
 import AIFeatures from './AIFeatures';
 import FeaturedProducts from './FeaturedProducts';
 import Chatbot from './Chatbot';

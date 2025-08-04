@@ -26,7 +26,7 @@ function CareDashboard() {
     return (
         <div className="leaf-bg" style={{background: 'linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)'}}>
             <Header toggleVrMode={toggleVrMode} />
-            <div className='mt-5' style={{marginTop:'66px'}}>
+            <div  style={{marginTop:'86px'}}>
                 <CareSection />
             </div>
             <Chatbot/>

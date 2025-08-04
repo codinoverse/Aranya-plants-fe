@@ -6,10 +6,22 @@ footer {
   padding: 2.5rem 1rem 1.5rem 1rem;
   overflow: hidden;
 }
-footer .container, footer .row, footer .col, footer .nav-link, footer .text-secondary {
+
+footer .container,
+footer .row,
+footer .col,
+footer .nav-link,
+footer .text-secondary {
   position: relative;
   z-index: 2;
 }
+
+.white-logo {
+  filter: brightness(0) invert(1);
+  /* Makes dark SVG white */
+}
+
+
 footer .nav-link {
   color: #b7c5d3 !important;
   font-weight: 500;
@@ -19,6 +31,7 @@ footer .nav-link {
   display: inline-block;
   padding-bottom: 2px;
 }
+
 footer .nav-link::after {
   content: '';
   display: block;
@@ -29,33 +42,42 @@ footer .nav-link::after {
   height: 2px;
   background: linear-gradient(90deg, #6ee7b7 0%, #059669 100%);
   border-radius: 2px;
-  transition: width 0.28s cubic-bezier(.4,1.4,.6,1), background 0.18s;
+  transition: width 0.28s cubic-bezier(.4, 1.4, .6, 1), background 0.18s;
 }
+
 footer .nav-link:hover {
   color: #6ee7b7 !important;
 }
+
 footer .nav-link:hover::after {
   width: 100%;
 }
-footer .footer-title, footer .fw-bold, footer .fw-semibold {
+
+footer .footer-title,
+footer .fw-bold,
+footer .fw-semibold {
   color: #fff !important;
   font-weight: 700 !important;
 }
+
 footer .footer-brand {
   color: #6ee7b7 !important;
   font-weight: 800;
   font-size: 1.5rem;
   letter-spacing: -1px;
 }
+
 footer .footer-icon {
   color: #b7c5d3;
   font-size: 1.5rem;
   margin-right: 1.2rem;
   transition: color 0.18s;
 }
+
 footer .footer-icon:last-child {
   margin-right: 0;
 }
+
 footer .footer-icon:hover {
   color: #6ee7b7;
-} 
+}

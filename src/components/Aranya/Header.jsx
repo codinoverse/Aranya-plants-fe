@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import './Header.css';
@@ -12,8 +12,20 @@ function Header({ toggleVrMode }) {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+  const profileDropdownRef = useRef(null);
 
-
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target)) {
+        setShowProfileDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleFileChange = (e) => {
     setResult(null);
@@ -71,6 +83,10 @@ function Header({ toggleVrMode }) {
     setError("");
   };
 
+  const toggleProfileDropdown = () => {
+    setShowProfileDropdown(!showProfileDropdown);
+  };
+
   const fullText = "Search plants.....";
   const [placeholder, setPlaceholder] = useState("");
   const [index, setIndex] = useState(0);
@@ -80,22 +96,21 @@ function Header({ toggleVrMode }) {
       setPlaceholder(fullText.slice(0, index + 1));
       setIndex((prevIndex) =>
         prevIndex + 1 < fullText.length ? prevIndex + 1 : 0
-      );97
+      );
     }, 150);
     return () => clearInterval(interval);
   }, [index]);
 
-
   return (
     <>
       <header id="header" className={`header fixed-top w-100 shadow-sm ${showPlantIdentifier ? 'd-none' : ''}`}>
-        
+
         <TopBanner />
         <nav className="navbar navbar-expand-lg navbar-light container py-1">
           <NavLink to="/" className="navbar-brand d-flex align-items-center gap-2">
-          <div className='logo-container'>
-            <img src={Logo} className='main-logo' width={"205px"} />
-          </div>
+            <div className='logo-container'>
+              <img src={Logo} className='main-logo' width={"205px"} />
+            </div>
           </NavLink>
           <button
             className="navbar-toggler"
@@ -138,8 +153,49 @@ function Header({ toggleVrMode }) {
                   <i className="fas fa-shopping-cart text-white"></i>
                 </div>
               </Link>
-              <div className='icon-btns btn-sm rounded-circle'>
+              <div
+                className='icon-btns btn-sm rounded-circle profile-icon position-relative'
+                onClick={toggleProfileDropdown}
+                ref={profileDropdownRef}
+              >
                 <i className="fa-solid fa-user"></i>
+                {showProfileDropdown && (
+                  <div className="profile-dropdown-menu shadow-sm">
+                    <div className="dropdown-header">
+                      <div className="user-icon">
+                        <i className="fas fa-user-circle"></i>
+                      </div>
+                      <div className="user-info">
+                        <p className="username">Welcome, User</p>
+                        <p className="email">user@example.com</p>
+                      </div>
+                    </div>
+                    <div className="dropdown-divider"></div>
+                    <Link to="/account" className="dropdown-item">
+                      <i className="fas fa-user me-2"></i> My Account
+                    </Link>
+                    <Link to="/orders" className="dropdown-item">
+                      <i className="fas fa-box me-2"></i> My Orders
+                    </Link>
+                    <Link to="/wishlist" className="dropdown-item">
+                      <i className="fas fa-heart me-2"></i> Wishlist
+                    </Link>
+                    <Link to="/address" className="dropdown-item">
+                      <i className="fas fa-map-marker-alt me-2"></i> Saved Addresses
+                    </Link>
+                    <Link to="/checkout" className="dropdown-item">
+                      <i className="fas fa-credit-card me-2"></i> Payment Methods
+                    </Link>
+                    <div className="dropdown-divider"></div>
+                    <Link to="/settings" className="dropdown-item">
+                      <i className="fas fa-cog me-2"></i> Settings
+                    </Link>
+                    <div className="dropdown-divider"></div>
+                    <button className="dropdown-item logout-btn">
+                      <i className="fas fa-sign-out-alt me-2"></i> Logout
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

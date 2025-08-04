@@ -1,0 +1,199 @@
+/* OrderDetails.css */
+
+.order-details-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Breadcrumb Styles */
+.breadcrumb-item a {
+  color: #0d6efd;
+}
+
+.breadcrumb-item a:hover {
+  color: #0b5ed7;
+}
+
+/* Status Indicator */
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #198754;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* Card Styles */
+.card {
+  border: 1px solid #e9ecef;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border-radius: 0.5rem;
+}
+
+.card-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1.25rem;
+  font-weight: 600;
+}
+
+/* Item Image Placeholder */
+.item-image {
+  width: 80px;
+  height: 80px;
+  background-color: #f1f3f4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #6c757d;
+  text-align: center;
+  padding: 8px;
+  line-height: 1.2;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Timeline Styles */
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.timeline-icon.completed {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.timeline-icon:not(.completed) {
+  background-color: #dee2e6;
+  color: #6c757d;
+}
+
+/* Payment Method */
+.visa-logo {
+  background-color: #1a1f71;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: monospace;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Button Styles */
+.btn {
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.btn-dark {
+  background-color: #212529;
+  border-color: #212529;
+}
+
+.btn-dark:hover {
+  background-color: #1c1f23;
+  border-color: #1a1e21;
+}
+
+.btn-outline-secondary {
+  color: #6c757d;
+  border-color: #dee2e6;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  color: #495057;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .order-details-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .item-image {
+    width: 60px;
+    height: 60px;
+    font-size: 9px;
+  }
+  
+  .d-flex.align-items-start {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  
+  .d-flex.align-items-start .item-image {
+    margin-bottom: 0.75rem;
+    align-self: flex-start;
+  }
+  
+  .d-flex.align-items-start .text-end {
+    text-align: left !important;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .d-flex.justify-content-between.align-items-start {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  
+  .d-flex.justify-content-between.align-items-start > div:last-child {
+    margin-top: 1rem;
+    align-self: flex-start;
+  }
+}
+
+/* Text Utilities */
+.text-muted {
+  color: #6c757d !important;
+}
+
+.fw-medium {
+  font-weight: 500 !important;
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+/* Spacing Utilities */
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.pb-4 {
+  padding-bottom: 1.5rem !important;
+}
+
+.pt-4 {
+  padding-top: 1.5rem !important;
+}
