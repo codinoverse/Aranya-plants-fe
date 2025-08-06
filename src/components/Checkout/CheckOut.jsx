@@ -11,9 +11,21 @@ const CheckoutPage = () => {
     cvv: '123',
     cardholderName: 'John Doe'
   });
+  
+  // UPI specific state
+  const [upiData, setUpiData] = useState({
+    upiId: '',
+    selectedApp: ''
+  });
+  const [upiVerified, setUpiVerified] = useState(false);
+  const [verifyingUPI, setVerifyingUPI] = useState(false);
 
   const handlePaymentChange = (method) => {
     setSelectedPayment(method);
+    // Reset UPI verification when switching payment methods
+    if (method !== 'google') {
+      setUpiVerified(false);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -21,6 +33,28 @@ const CheckoutPage = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleUpiInputChange = (e) => {
+    setUpiData({
+      ...upiData,
+      [e.target.name]: e.target.value
+    });
+    // Reset verification status when UPI ID changes
+    if (e.target.name === 'upiId') {
+      setUpiVerified(false);
+    }
+  };
+
+  const verifyUPI = async () => {
+    if (!upiData.upiId.trim()) return;
+    
+    setVerifyingUPI(true);
+    // Simulate UPI verification API call
+    setTimeout(() => {
+      setUpiVerified(true);
+      setVerifyingUPI(false);
+    }, 2000);
   };
 
   const applyCoupon = () => {
@@ -32,6 +66,10 @@ const CheckoutPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (selectedPayment === 'google' && !upiVerified) {
+      alert('Please verify your UPI ID first');
+      return;
+    }
     alert('Order completed successfully!');
   };
 
@@ -85,6 +123,40 @@ const CheckoutPage = () => {
                 </div>
               </div>
 
+              
+              {/* UPI Pay */}
+              <div className="payment-option mb-4">
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="paymentMethod"
+                    id="google"
+                    checked={selectedPayment === 'google'}
+                    onChange={() => handlePaymentChange('google')}
+                  />
+                  <label className="form-check-label payment-label" htmlFor="google">
+                    <div className="d-flex align-items-center">
+                      <span className="me-2 badge bg-success">UPI</span>
+                      <span>UPI</span>
+                    </div>
+                    <div className="d-flex align-items-center">
+                      <small className="text-muted d-block mt-1">Pay with UPI</small>
+                      <div className="card-icons ms-auto">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='20' viewBox='0 0 32 20'%3E%3Crect width='32' height='20' rx='4' fill='%235f259f'/%3E%3Ctext x='16' y='14' text-anchor='middle' font-family='Arial' font-size='11' fill='white'%3Eपे%3C/text%3E%3C/svg%3E"
+                          alt="PhonePe" className="me-1" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='20' viewBox='0 0 32 20'%3E%3Crect width='32' height='20' rx='4' fill='%230084ff'/%3E%3Ctext x='16' y='14' text-anchor='middle' font-family='Arial' font-size='8' fill='white'%3EPaytm%3C/text%3E%3C/svg%3E"
+                          alt="Paytm UPI" className="me-1" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='20' viewBox='0 0 32 20'%3E%3Crect width='32' height='20' rx='4' fill='black'/%3E%3Ctext x='16' y='14' text-anchor='middle' font-family='Arial' font-size='8' fill='white' font-weight='bold'%3ECRED%3C/text%3E%3C/svg%3E"
+                          alt="Cred UPI" className="me-1" />
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='20' viewBox='0 0 32 20'%3E%3Crect width='32' height='20' rx='4' fill='%234285F4'/%3E%3Ctext x='16' y='14' text-anchor='middle' font-family='Arial' font-size='8' fill='white' font-weight='bold'%3EGPay%3C/text%3E%3C/svg%3E"
+                          alt="Google Pay" className="me-1" />
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
               {/* PayPal */}
               <div className="payment-option mb-3">
                 <div className="form-check">
@@ -127,30 +199,10 @@ const CheckoutPage = () => {
                 </div>
               </div>
 
-              {/* Google Pay */}
-              <div className="payment-option mb-4">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="paymentMethod"
-                    id="google"
-                    checked={selectedPayment === 'google'}
-                    onChange={() => handlePaymentChange('google')}
-                  />
-                  <label className="form-check-label payment-label" htmlFor="google">
-                    <div className="d-flex align-items-center">
-                      <i className="fab fa-google me-2 text-danger"></i>
-                      <span>Google Pay</span>
-                    </div>
-                    <small className="text-muted d-block mt-1">Pay with Google Pay</small>
-                  </label>
-                </div>
-              </div>
 
               {/* Card Details Form - Only show when credit card is selected */}
               {selectedPayment === 'credit' && (
-                <div>
+                <div className="card-details-form">
                   <div className="row">
                     <div className="col-12 mb-3">
                       <label htmlFor="cardNumber" className="form-label">Card Number</label>
@@ -204,6 +256,119 @@ const CheckoutPage = () => {
                 </div>
               )}
 
+              {/* UPI Details Form - Only show when UPI is selected */}
+              {selectedPayment === 'google' && (
+                <div className="upi-details-form">
+                  <div className="row">
+                    <div className="col-12 mb-3">
+                      <label htmlFor="upiId" className="form-label">UPI ID</label>
+                      <div className="input-group">
+                        <input
+                          type="text"
+                          className={`form-control ${upiVerified ? 'is-valid' : ''}`}
+                          id="upiId"
+                          name="upiId"
+                          value={upiData.upiId}
+                          onChange={handleUpiInputChange}
+                          placeholder="yourname@paytm / yourname@phonepe"
+                        />
+                        <button
+                          type="button"
+                          className="btn btn-outline-primary"
+                          onClick={verifyUPI}
+                          disabled={verifyingUPI || !upiData.upiId.trim() || upiVerified}
+                        >
+                          {verifyingUPI ? (
+                            <>
+                              <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                              Verifying...
+                            </>
+                          ) : upiVerified ? (
+                            <>
+                              <i className="fas fa-check-circle me-1"></i>
+                              Verified
+                            </>
+                          ) : (
+                            'Verify'
+                          )}
+                        </button>
+                      </div>
+                      {upiVerified && (
+                        <div className="mt-2">
+                          <small className="text-success">
+                            <i className="fas fa-check-circle me-1"></i>
+                            UPI ID verified successfully
+                          </small>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* UPI App Selection */}
+                  <div className="mb-4">
+                    <label className="form-label">Choose UPI App</label>
+                    <div className="row g-2">
+                      <div className="col-6 col-md-3">
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="upiApp"
+                          id="phonepe"
+                          value="phonepe"
+                          onChange={handleUpiInputChange}
+                        />
+                        <label className="btn btn-outline-secondary d-flex flex-column align-items-center p-3 w-100" htmlFor="phonepe">
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235f259f'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-size='16' fill='white'%3Eपे%3C/text%3E%3C/svg%3E" alt="PhonePe" className="mb-2" />
+                          <small>PhonePe</small>
+                        </label>
+                      </div>
+                      <div className="col-6 col-md-3">
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="upiApp"
+                          id="paytm"
+                          value="paytm"
+                          onChange={handleUpiInputChange}
+                        />
+                        <label className="btn btn-outline-secondary d-flex flex-column align-items-center p-3 w-100" htmlFor="paytm">
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230084ff'/%3E%3Ctext x='16' y='20' text-anchor='middle' font-family='Arial' font-size='12' fill='white'%3EPaytm%3C/text%3E%3C/svg%3E" alt="Paytm" className="mb-2" />
+                          <small>Paytm</small>
+                        </label>
+                      </div>
+                      <div className="col-6 col-md-3">
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="upiApp"
+                          id="gpay"
+                          value="gpay"
+                          onChange={handleUpiInputChange}
+                        />
+                        <label className="btn btn-outline-secondary d-flex flex-column align-items-center p-3 w-100" htmlFor="gpay">
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234285F4'/%3E%3Ctext x='16' y='20' text-anchor='middle' font-family='Arial' font-size='12' fill='white'%3EGPay%3C/text%3E%3C/svg%3E" alt="GPay" className="mb-2" />
+                          <small>Google Pay</small>
+                        </label>
+                      </div>
+                      <div className="col-6 col-md-3">
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="upiApp"
+                          id="cred"
+                          value="cred"
+                          onChange={handleUpiInputChange}
+                        />
+                        <label className="btn btn-outline-secondary d-flex flex-column align-items-center p-3 w-100" htmlFor="cred">
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='black'/%3E%3Ctext x='16' y='20' text-anchor='middle' font-family='Arial' font-size='12' fill='white'%3ECRED%3C/text%3E%3C/svg%3E" alt="CRED" className="mb-2" />
+                          <small>CRED</small>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Coupon Code Section */}
               <div className="coupon-section">
                 <h6 className="mb-3">Coupon Code</h6>
@@ -245,7 +410,7 @@ const CheckoutPage = () => {
           <div className="card order-summary-card">
             <div className="card-body">
               <h5 className="card-title mb-4">Order Summary</h5>
-              
+
               {/* Order Items */}
               <div className="order-item d-flex mb-3">
                 <div className="item-image me-3">
