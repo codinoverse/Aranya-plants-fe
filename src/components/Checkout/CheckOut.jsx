@@ -11,7 +11,7 @@ const CheckoutPage = () => {
     cvv: '123',
     cardholderName: 'John Doe'
   });
-  
+
   // UPI specific state
   const [upiData, setUpiData] = useState({
     upiId: '',
@@ -48,7 +48,7 @@ const CheckoutPage = () => {
 
   const verifyUPI = async () => {
     if (!upiData.upiId.trim()) return;
-    
+
     setVerifyingUPI(true);
     // Simulate UPI verification API call
     setTimeout(() => {
@@ -123,7 +123,7 @@ const CheckoutPage = () => {
                 </div>
               </div>
 
-              
+
               {/* UPI Pay */}
               <div className="payment-option mb-4">
                 <div className="form-check">

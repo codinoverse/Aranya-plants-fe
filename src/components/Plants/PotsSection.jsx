@@ -22,8 +22,8 @@ const PotsSection = () => {
     {
       id: 1,
       name: 'Classic White Ceramic Pot',
-      description: 'Perfect for indoor plants with excellent drainage',
-      price: 32.99,
+      description: 'Perfect for indoor plants with excellent',
+      price: 1332.99,
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/5735ef5c55-42f7207907fd84c30add.png',
       alt: 'elegant white ceramic pot with drainage holes, minimalist design, studio lighting'
     },
@@ -31,15 +31,15 @@ const PotsSection = () => {
       id: 2,
       name: 'Rustic Terracotta Pot',
       description: 'Handcrafted with natural clay finish',
-      price: 28.50,
+      price: 828.50,
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/5f2ab1d5c6-c8a3ed6266bacaffe3e1.png',
       alt: 'rustic terracotta ceramic pot with textured surface, earthy brown color, natural lighting'
     },
     {
       id: 3,
       name: 'Modern Geometric Pot',
-      description: 'Contemporary design with unique patterns',
-      price: 45.00,
+      description: 'Contemporary design with unique',
+      price: 1045.00,
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/39dbfae96b-cc2f9b7972cc862d2ec8.png',
       alt: 'modern black ceramic pot with geometric pattern, contemporary design, clean background'
     },
@@ -47,7 +47,7 @@ const PotsSection = () => {
       id: 4,
       name: 'Ocean Blue Glazed Pot',
       description: 'Stunning blue glaze with smooth finish',
-      price: 39.99,
+      price: 639.99,
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/c00adfbdd4-a036817657d4b47fb334.png',
       alt: 'blue glazed ceramic pot with smooth finish, medium size, professional product photography'
     },
@@ -55,7 +55,7 @@ const PotsSection = () => {
       id: 5,
       name: 'Pastel Mini Pot Set',
       description: 'Set of 3 small pots in soft colors',
-      price: 24.99,
+      price: 1224.99,
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/5415b9cf73-17bf24be5361feb14a96.png',
       alt: 'small ceramic pot set with pastel colors, cute miniature pots, soft lighting'
     },
@@ -63,7 +63,7 @@ const PotsSection = () => {
       id: 6,
       name: 'Artisan Speckled Pot',
       description: 'Large pot with unique speckled finish',
-      price: 52.00,
+      price: 552.00,
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/02d23904b7-8d5c9887abacbd20103d.png',
       alt: 'large ceramic pot with speckled glaze, artisan crafted, natural texture'
     }
@@ -230,7 +230,7 @@ const PotsSection = () => {
                     <h3 className="h6 fw-semibold text-dark mb-1">{product.name}</h3>
                     <p className="small text-secondary mb-2">{product.description}</p>
                     <div className="d-flex align-items-center justify-content-between mb-2">
-                      <span className="fw-bold text-success">${product.price}</span>
+                      <span className="fw-bold text-success">{`₹${product.price}`}</span>
                       <button className="btn btn-success btn-sm">Add to Cart</button>
                     </div>
                   </div>

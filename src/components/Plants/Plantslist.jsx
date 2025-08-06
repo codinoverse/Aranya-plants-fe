@@ -20,7 +20,7 @@ function Plantlist() {
       const scrolled = window.pageYOffset;
       const parallax = document.querySelector('.parallax-leaf');
       if (parallax) {
-        parallax.style.setProperty('--scroll-y', `${scrolled * 0.5}px`);
+        parallax.style.setProperty('--scroll-y', `₹{scrolled * 0.5}px`);
       }
     }, 100);
 
@@ -41,7 +41,7 @@ function Plantlist() {
       id: 1,
       name: 'Monstera Deliciosa',
       description: 'Indoor Plant • Low Maintenance',
-      price: '$45.99',
+      price: '₹45.99',
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/ea79bde387-8519eebca851626cb24e.png',
       alt: 'beautiful monstera deliciosa houseplant in terracotta pot, bright natural lighting',
       rating: '4.8 (124)',
@@ -50,7 +50,7 @@ function Plantlist() {
       id: 2,
       name: 'Snake Plant',
       description: 'Indoor Plant • Very Low Maintenance',
-      price: '$29.99',
+      price: '₹29.99',
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/8a1b6f0c3a-64b194b6022a440061cb.png',
       alt: 'snake plant sansevieria in modern white pot, minimal style',
       rating: '4.9 (89)',
@@ -59,7 +59,7 @@ function Plantlist() {
       id: 3,
       name: 'Fiddle Leaf Fig',
       description: 'Indoor Plant • Medium Maintenance',
-      price: '$89.99',
+      price: '₹89.99',
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/a888af57ab-d9b8cccd8498a78f72ec.png',
       alt: 'fiddle leaf fig plant in woven basket pot, bright interior',
       rating: '4.6 (156)',
@@ -69,7 +69,7 @@ function Plantlist() {
       id: 4,
       name: 'Peace Lily',
       description: 'Indoor Plant • Low Maintenance',
-      price: '$35.99',
+      price: '₹35.99',
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/88fca39958-65c56d28ce4cf39f5bbf.png',
       alt: 'peace lily plant with white flowers in ceramic pot',
       rating: '4.7 (92)',
@@ -78,7 +78,7 @@ function Plantlist() {
       id: 5,
       name: 'Rubber Plant',
       description: 'Indoor Plant • Low Maintenance',
-      price: '$42.99',
+      price: '₹42.99',
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/e9f9d47de9-535b587d766518250c9a.png',
       alt: 'rubber plant ficus elastica in modern black pot',
       rating: '4.5 (78)',
@@ -87,7 +87,7 @@ function Plantlist() {
       id: 6,
       name: 'Golden Pothos',
       description: 'Plant • Very Low Maintenance',
-      price: '$24.99',
+      price: '₹24.99',
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/88fca39958-65c56d28ce4cf39f5bbf.png',
       alt: 'pothos golden vine plant hanging in macrame holder',
       rating: '4.8 (203)',
@@ -96,7 +96,7 @@ function Plantlist() {
       id: 7,
       name: 'Aloe Vera',
       description: 'Succulent • Very Low Maintenance',
-      price: '$18.99',
+      price: '₹18.99',
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/067efa4f48-f97c942512821f708bb3.png',
       alt: 'aloe vera succulent plant in terracotta pot, desert style',
       rating: '4.9 (167)',
@@ -105,7 +105,7 @@ function Plantlist() {
       id: 8,
       name: 'Spider Plant',
       description: 'Hanging Plant • Low Maintenance',
-      price: '$27.99',
+      price: '₹27.99',
       image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/d5ca234a4b-faf8732ebfa76766e504.png',
       alt: 'spider plant chlorophytum with baby plants in hanging basket',
       rating: '4.7 (134)',
@@ -132,19 +132,19 @@ function Plantlist() {
                 <div className="mb-2">
                   <div className="form-check mb-1">
                     <input className="form-check-input" type="checkbox" id="under25" />
-                    <label className="form-check-label small text-secondary" htmlFor="under25">Under $25</label>
+                    <label className="form-check-label small text-secondary" htmlFor="under25">Under ₹25</label>
                   </div>
                   <div className="form-check mb-1">
                     <input className="form-check-input" type="checkbox" id="25-50" />
-                    <label className="form-check-label small text-secondary" htmlFor="25-50">$25 - $50</label>
+                    <label className="form-check-label small text-secondary" htmlFor="25-50">₹25 - ₹50</label>
                   </div>
                   <div className="form-check mb-1">
                     <input className="form-check-input" type="checkbox" id="50-100" />
-                    <label className="form-check-label small text-secondary" htmlFor="50-100">$50 - $100</label>
+                    <label className="form-check-label small text-secondary" htmlFor="50-100">₹50 - ₹100</label>
                   </div>
                   <div className="form-check mb-1">
                     <input className="form-check-input" type="checkbox" id="over100" />
-                    <label className="form-check-label small text-secondary" htmlFor="over100">Over $100</label>
+                    <label className="form-check-label small text-secondary" htmlFor="over100">Over ₹100</label>
                   </div>
                 </div>
               </div>
@@ -183,7 +183,7 @@ function Plantlist() {
                   {plants.map(plant => (
                     <div
                       key={plant.id}
-                      className={`col-12 col-md-6 col-lg-3 ${vrMode ? 'vr-mode' : ''}`}
+                      className={`col-12 col-md-6 col-lg-3 ₹{vrMode ? 'vr-mode' : ''}`}
                     >
                       <div className="card h-100 shadow-sm border-0">
                         <div className="position-relative">
@@ -194,7 +194,7 @@ function Plantlist() {
                             alt={plant.alt}
                             onError={handleImageError}
                           />
-                          <button className="btn btn-light position-absolute top-0 end-0 m-2 rounded-circle shadow-sm"><i className={`fa-regular fa-heart ${plant.favorited ? 'text-danger' : 'text-secondary'}`}></i></button>
+                          <button className="btn btn-light position-absolute top-0 end-0 m-2 rounded-circle shadow-sm"><i className={`fa-regular fa-heart ₹{plant.favorited ? 'text-danger' : 'text-secondary'}`}></i></button>
                         </div>
                         <div className="card-body">
                           <h3 className="h6 fw-semibold text-dark mb-1">{plant.name}</h3>
