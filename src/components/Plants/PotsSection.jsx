@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './PotsSection.css'
+import VideoBanner1 from '../Aranya/VideoBanner1';
 
 const PotsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('Ceramic Pots');
@@ -95,6 +96,7 @@ const PotsSection = () => {
 
   return (
     <div className="pots-section bg-light min-vh-100">
+      <VideoBanner1/>
       <main className="container py-4">
         <div className="row g-4">
           {/* Sidebar */}
@@ -166,6 +168,10 @@ const PotsSection = () => {
             </div>
           </aside>
           {/* Main Content */}
+
+            
+          
+
           <section className="col-lg-9">
             <div className="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
               <div>

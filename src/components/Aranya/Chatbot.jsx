@@ -35,14 +35,14 @@ function Chatbot() {
       <div
         id="chatbot-toggle"
         className="chatbot-toggle"
-        style={{width:'64px',height:'64px',background:'linear-gradient(90deg,#22c55e,#059669)',borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer'}}
+        style={{width:'64px',height:'64px',borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer'}}
         onClick={toggleChat}
       >
         <i className="fas fa-robot text-white fs-3"></i>
       </div>
       <div id="chatbot-window" className={`${isOpen ? '' : 'd-none'} chatbot-window position-absolute bottom-100 end-0 mb-3`} style={{width:'320px',height:'384px'}}>
         <div className="card rounded-4 shadow-lg border-0 h-100 d-flex flex-column">
-          <div className="card-header bg-success bg-gradient text-white rounded-top-4 d-flex align-items-center justify-content-between py-3 px-4">
+          <div className="card-heading rounded-top-4 d-flex align-items-center justify-content-between py-3 px-4">
             <div className="d-flex align-items-center gap-2">
               <i className="fas fa-robot text-white fs-5"></i>
               <span className="fw-semibold">Plant Assistant</span>
@@ -71,7 +71,7 @@ function Chatbot() {
               />
               <button
                 id="send-message"
-                className="btn btn-success rounded-pill ms-2"
+                className="send-button rounded-pill ms-2"
                 onClick={sendMessage}
               >
                 <i className="fas fa-paper-plane"></i>

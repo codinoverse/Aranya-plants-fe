@@ -7,7 +7,7 @@
 }
 
 .sub-btn {
-    background-color: #198754;
+    background-color: #2f7405;
     color: white;
     border-radius: 2rem;
     padding: 0.5rem 2rem;
@@ -16,6 +16,15 @@
     border: none;
     transition: background 0.2s;
 }
+
+.addtc {
+  background-color: #189202;
+  color: white;
+  border-color:  #189202;
+  border-radius: 25px;
+}
+
+
 
 .sub-btn:hover {
     background-color: #146c43;
@@ -97,10 +106,10 @@
   border-radius: 0 2rem 2rem 0 !important;
 }
 .tips {
-  border-left: 4px solid #059669;
+  border-left: 4px solid #428711;
   padding-left: 1rem;
   margin-bottom: 1rem;
-  color: #198754;
+  color: #033e01;
   background: #f8fafc;
   border-radius: 0.5rem;
   font-size: 0.98em;
@@ -113,10 +122,10 @@
   --bs-pagination-bg: #fff;
   --bs-pagination-border-width: 0;
   --bs-pagination-border-radius: 1.5rem;
-  --bs-pagination-hover-color: #059669;
+  --bs-pagination-hover-color: #047a06e0;
   --bs-pagination-hover-bg: #f8fafc;
   --bs-pagination-active-color: #fff;
-  --bs-pagination-active-bg: linear-gradient(90deg, #059669 0%, #34d399 100%);
+  --bs-pagination-active-bg: linear-gradient(90deg, #139707 0%, #34d399 100%);
   --bs-pagination-active-border-color: #059669;
   --bs-pagination-focus-box-shadow: 0 0 0 2px #05966933;
   display: flex;

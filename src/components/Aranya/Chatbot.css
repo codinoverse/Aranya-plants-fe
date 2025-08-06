@@ -1,15 +1,21 @@
 #chatbot-toggle {
-  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.18);
+  box-shadow: 0 2px 12px 0 rgba(4, 121, 45, 0.997);
+  background-color: #166e06;
   transition: box-shadow 0.2s, transform 0.2s;
 }
 #chatbot-toggle:hover {
-  box-shadow: 0 8px 32px 0 rgba(44, 183, 78, 0.24);
+  box-shadow: 0 8px 32px 0 rgb(2, 8, 3);
   transform: scale(1.08);
 }
 #chatbot-window {
   border-radius: 1.5rem;
-  box-shadow: 0 4px 32px 0 rgba(44, 183, 78, 0.18);
+  box-shadow: 0 4px 32px 0 rgb(2, 109, 28);
   overflow: hidden;
+  background-color: #198754;
+}
+.card-heading {
+  background-color: #226503;
+  color: white;
 }
 #chat-messages .bg-success.bg-opacity-10 {
   background: #e0f7ef !important;
@@ -19,3 +25,12 @@
   background: #f8fafc !important;
   color: #333;
 } 
+
+.send-button {
+  background-color: #166e06;
+  border-color: white;
+  color: white;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 2px 12px 0 rgb(1, 79, 14);
+}

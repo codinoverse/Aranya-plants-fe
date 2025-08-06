@@ -99,18 +99,11 @@ const CareSection = () => {
   const totalPages = 3;
 
   return (
-    <main className="care-section container-fluid py-4" style={{background:'#e9fdf3'}}>
+    <main className="care-section container-fluid py-4" style={{background:'#ffffffff'}}>
       <div className="container">
         <div className="row g-4">
           {/* Main Content */}
-          <section className="col-lg-8">
-            <nav className="mb-2" aria-label="breadcrumb">
-              <ol className="breadcrumb small">
-                <li className="breadcrumb-item"><a href="#">Home</a></li>
-                <li className="breadcrumb-item">Plant Care</li>
-                <li className="breadcrumb-item active" aria-current="page">Products</li>
-              </ol>
-            </nav>
+          <section className="col-lg-8" style={{marginTop:"55px"}}>
             <h1 className="h3 fw-bold text-dark mb-1">Plant Care Products</h1>
             <p className="text-secondary mb-4">Everything you need to keep your plants healthy and thriving</p>
             <div className="d-flex flex-wrap gap-2 mb-4 align-items-center">
@@ -148,7 +141,7 @@ const CareSection = () => {
                       <p className="small text-secondary mb-2">{product.description}</p>
                       <div className="d-flex align-items-center justify-content-between mb-2">
                         <span className="fw-bold text-success">{product.price}</span>
-                        <button className="btn btn-success btn-sm rounded-pill">Add to Cart</button>
+                        <button className="addtc rounded-pill">Add to Cart</button>
                       </div>
                       <div className="d-flex align-items-center gap-1 small text-warning">
                         <i className="fa fa-star"></i>
@@ -162,7 +155,7 @@ const CareSection = () => {
             </div>
             {/* Pagination */}
             <nav className="d-flex justify-content-center mt-4" aria-label="Care pagination">
-              <ul className="pagination care-pagination">
+              <ul className=" care-pagination">
                 <li className={`page-item${currentPage === 1 ? ' disabled' : ''}`}>
                   <button className="page-link" onClick={() => setCurrentPage(currentPage - 1)} tabIndex={currentPage === 1 ? -1 : 0} aria-label="Previous">&laquo;</button>
                 </li>
@@ -197,7 +190,7 @@ const CareSection = () => {
                 <span className="fw-semibold">Total</span>
                 <span className="fw-bold text-success">$67.48</span>
               </div>
-              <button className="btn btn-success w-100 mt-3">Proceed to Checkout</button>
+              <button className="addtc w-100 mt-3">Proceed to Checkout</button>
             </div>
             <div className="care-sidebar mb-4">
               <h3 className="h6 fw-bold text-dark mb-3 d-flex align-items-center">
