@@ -77,7 +77,7 @@ header#header .navbar-nav .nav-link {
   border-radius: 20px;
   font-weight: 600;
   font-size: 1rem;
-  padding: 0.3rem 0.9rem;
+  padding: 0.3rem 0.5rem;
   position: relative;
   transition: all 0.2s;
 }
@@ -111,7 +111,7 @@ header#header .fa-lg {
 .search-input {
   width: 200px;
   font-size: 0.9rem;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.5rem;
 }
 
 .icon-btns {

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import Header from '../Aranya/Header.jsx';
-import Footer from '../Aranya/Footer.jsx';
-import PlantAboutPage from './About.jsx';
-import Chatbot from '../Aranya/Chatbot.jsx';
+import Header from "../HeaderSection/Header";
+import Chatbot from '../Chatbot/Chatbot';
+import Footer from '../FooterSection/Footer';
+import Cart from './Cart';
 
-function AboutMe() {
+function CartDashboard() {
     const [vrMode, setVrMode] = useState(false);
 
     useEffect(() => {
@@ -24,15 +24,16 @@ function AboutMe() {
     };
 
     return (
-        <div className="leaf-bg" style={{background: 'linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)'}}>
-            <Header toggleVrMode={toggleVrMode} />
-            <div className='mt-5' style={{ marginTop: '66px' }}>
-                <PlantAboutPage/>
+        <>
+            <div className="leaf-bg" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)' }}>
+               <div className='mb-5'><Header toggleVrMode={toggleVrMode}/> </div> 
+                
+                <Cart/>
+                <Chatbot />
+                <Footer />
             </div>
-            <Chatbot/>
-            <Footer />
-        </div>
+        </>
     );
 }
 
-export default AboutMe;
+export default CartDashboard;

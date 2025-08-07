@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import Header from '../Aranya/Header.jsx';
-import Footer from '../Aranya/Footer.jsx';
+import Header from '../HeaderSection/Header.jsx';
+import Footer from '../FooterSection/Footer.jsx';
 import CareSection from './Care.jsx';
-import Chatbot from '../Aranya/Chatbot.jsx';
+import Chatbot from '../Chatbot/Chatbot.jsx';
 
 function CareDashboard() {
     const [vrMode, setVrMode] = useState(false);

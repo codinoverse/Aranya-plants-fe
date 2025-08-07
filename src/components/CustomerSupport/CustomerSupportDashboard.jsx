@@ -1,5 +1,5 @@
-import Footer from "../Aranya/Footer";
-import Header from "../Aranya/Header";
+import Footer from "../Aranya/FooterSection/Footer";
+import Header from "../Aranya/HeaderSection/Header";
 import PlantCareSupport from "./PlantCareSupport";
 
 

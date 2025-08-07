@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
-import Header from './Header';
-import AIFeatures from './AIFeatures';
-import FeaturedProducts from './FeaturedProducts';
-import Chatbot from './Chatbot';
-import Footer from './Footer';
-import Category from './Category';
-import Trending from './Trending';
-import Choose from './Choose';
-import OfferBanner from './OfferBanner';
-import DownBanner from './DownBanner';
+import Header from '../Aranya/HeaderSection/Header.jsx';
+import AIFeatures from './Ai features/AIFeatures';
+import Chatbot from './Chatbot/Chatbot';
+import FeaturedProducts from './Featured/FeaturedProducts';
+import Footer from './FooterSection/Footer';
+import Category from './Category/Category';
+import Trending from './TrendingSection/Trending.jsx';
+import Choose from './WhyChoose/Choose';
+import OfferBanner from './OfferBannerSection/OfferBanner.jsx';
+import DownBanner from './DownBanners/DownBanner';
 import VideoBanner from './VideoBanner';
+
 
 function Dashboard() {
     const [vrMode, setVrMode] = useState(false);

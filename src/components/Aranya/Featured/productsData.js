@@ -60,7 +60,7 @@ export const products = [
         rating: 4.6
     },
      {
-        id: 1,
+        id: 5,
         name: 'Monstera Deliciosa',
         description: 'Swiss Cheese Plant - Perfect for Indoor',
         price: '₹1499.99',
@@ -75,7 +75,7 @@ export const products = [
         rating: 4.5
     },
     {
-        id: 2,
+        id: 6,
         name: 'Fiddle Leaf Fig',
         description: 'Statement Indoor Tree Plant',
         price: '₹1750.00',
@@ -90,7 +90,7 @@ export const products = [
         rating: 4.2
     },
     {
-        id: 3,
+        id: 7,
         name: 'Snake Plant',
         description: 'Low Maintenance and Stylish',
         price: '₹1355.00',
@@ -105,7 +105,7 @@ export const products = [
         rating: 4.6
     },
     {
-        id: 4,
+        id: 8,
         name: 'Golden Pothos',
         description: 'Air purifying',
         price: '₹1099.00',
@@ -120,7 +120,7 @@ export const products = [
         rating: 4.6
     },
      {
-        id: 1,
+        id: 9,
         name: 'Monstera Deliciosa',
         description: 'Swiss Cheese Plant - Perfect for Indoor',
         price: '₹1499.99',
@@ -135,7 +135,7 @@ export const products = [
         rating: 4.5
     },
     {
-        id: 2,
+        id: 10,
         name: 'Fiddle Leaf Fig',
         description: 'Statement Indoor Tree Plant',
         price: '₹1750.00',
@@ -150,7 +150,7 @@ export const products = [
         rating: 4.2
     },
     {
-        id: 3,
+        id: 11,
         name: 'Snake Plant',
         description: 'Low Maintenance and Stylish',
         price: '₹1355.00',
@@ -165,7 +165,7 @@ export const products = [
         rating: 4.6
     },
     {
-        id: 4,
+        id: 12,
         name: 'Golden Pothos',
         description: 'Air purifying',
         price: '₹1099.00',
@@ -180,7 +180,7 @@ export const products = [
         rating: 4.6
     },
      {
-        id: 1,
+        id: 13,
         name: 'Monstera Deliciosa',
         description: 'Swiss Cheese Plant - Perfect for Indoor',
         price: '₹1499.99',
@@ -195,7 +195,7 @@ export const products = [
         rating: 4.5
     },
     {
-        id: 2,
+        id: 14,
         name: 'Fiddle Leaf Fig',
         description: 'Statement Indoor Tree Plant',
         price: '₹1750.00',
@@ -210,7 +210,7 @@ export const products = [
         rating: 4.2
     },
     {
-        id: 3,
+        id: 15,
         name: 'Snake Plant',
         description: 'Low Maintenance and Stylish',
         price: '₹1355.00',
@@ -225,7 +225,7 @@ export const products = [
         rating: 4.6
     },
     {
-        id: 4,
+        id: 16,
         name: 'Golden Pothos',
         description: 'Air purifying',
         price: '₹1099.00',

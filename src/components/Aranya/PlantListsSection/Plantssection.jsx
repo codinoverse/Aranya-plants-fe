@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import Header from '../Aranya/Header';
-import Plantlist from './Plantslist';
-import Chatbot from '../Aranya/Chatbot';
-import Footer from '../Aranya/Footer';
+import Header from '../HeaderSection/Header.jsx';
+import Plantlist from './Plantslist.jsx';
+import Chatbot from '../Chatbot/Chatbot.jsx';
+import Footer from '../FooterSection/Footer.jsx';
 
 
 

@@ -1,23 +1,27 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from "./components/Aranya/Dashboard";
-import Plantsection from "./components/Plants/Plantssection"
-import Potsdashboard from './components/Plants/PotsDashboard';
-import CareDashboard from './components/Plants/CareDashboard';
-import AboutMe from './components/Plants/AboutMe';
-import CartDashboard from './components/Aranya/CartDashboard';
-import ProductCard from './components/Aranya/ProductCard';
+import Plantsection from "./components/Aranya/PlantListsSection/Plantssection"
+import Potsdashboard from './components/Pots/PotsDashboard';
+import CareDashboard from './components/Aranya/CareSection/CareDashboard';
+import AboutMe from './components/Aranya/AboutusSection/AboutMe';
+import CartDashboard from './components/Aranya/Cart/CartDashboard';
+import ProductCard from './components/Aranya/ProductCardSection/ProductCard';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import OrderDashboard from './components/Orders/OrderDashboard';
 import AddressDashboard from './components/AddressManagement/AddressDashboard';
-import CheckOutDashboard from './components/Checkout/CheckoutDashboard';
+import CheckOutDashboard from './components/Aranya/Checkout/CheckoutDashboard';
 import PlantWishListDashboard from './components/PlantWishList/PlantWishListDashboard';
 import CustomerCareDashboard from './components/CustomerSupport/CustomerSupportDashboard';
+import PlantAuth from './components/Aranya/SignupLoginSection/SignupLogin';
+import { AuthProvider } from './components/Aranya/AuthContextSection/AuthContext';
+
 
 
 function App() {
   return (
     <>
+      <AuthProvider>
         <Router>
           <Routes>
             <Route path="/" element={<Dashboard />} />
@@ -32,8 +36,10 @@ function App() {
             <Route path='/checkout' element={<CheckOutDashboard />} />
             <Route path="/wishlist" element={<PlantWishListDashboard />} />
             <Route path='/CustomerSupport' element={<CustomerCareDashboard />} />
+            <Route path='/signup' element={<PlantAuth />} />
           </Routes>
         </Router>
+      </AuthProvider>
     </>
   );
 }

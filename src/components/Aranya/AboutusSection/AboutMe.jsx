@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import Header from '../Aranya/Header.jsx';
-import Footer from '../Aranya/Footer.jsx';
-import PotsSection from './PotsSection.jsx';
-import Chatbot from '../Aranya/Chatbot.jsx';
+import Header from '../HeaderSection/Header.jsx';
+import Footer from '../FooterSection/Footer.jsx';
+import PlantAboutPage from './About.jsx';
+import Chatbot from '../Chatbot/Chatbot.jsx';
 
-function Potsdashboard() {
+function AboutMe() {
     const [vrMode, setVrMode] = useState(false);
 
     useEffect(() => {
@@ -26,8 +26,8 @@ function Potsdashboard() {
     return (
         <div className="leaf-bg" style={{background: 'linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)'}}>
             <Header toggleVrMode={toggleVrMode} />
-            <div style={{marginTop:'88px'}}>
-                <PotsSection />
+            <div className='mt-5' style={{ marginTop: '66px' }}>
+                <PlantAboutPage/>
             </div>
             <Chatbot/>
             <Footer />
@@ -35,4 +35,4 @@ function Potsdashboard() {
     );
 }
 
-export default Potsdashboard;
+export default AboutMe;

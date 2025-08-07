@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProductCard.css';
-import { products } from './productsData';
-import Header from './Header';
-import Footer from './Footer';
+import { products } from '../Featured/productsData';
+import Header from '../HeaderSection/Header';
+import Footer from '../FooterSection/Footer';
 
 const ProductCard = () => {
   const { productId } = useParams();

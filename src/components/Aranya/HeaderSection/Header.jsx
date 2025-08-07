@@ -1,13 +1,18 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import './Header.css';
-import TopBanner from './TopBanner';
+import TopBanner from '../TopBannerSection/TopBanner';
 import Logo from "/src/assets/Website-Logo.svg";
+import PlantAuth from '../SignupLoginSection/SignupLogin';
+import { AuthContext } from '../AuthContextSection/AuthContext';
 
 function Header({ toggleVrMode }) {
+
+  const { isLoggedIn, userInfo, login, logout } = useContext(AuthContext);
   const [navOpen, setNavOpen] = useState(false);
   const [showPlantIdentifier, setShowPlantIdentifier] = useState(false);
+  const [showPlantAuth, setShowPlantAuth] = useState(false);
   const [imageFile, setImageFile] = useState(null);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -26,6 +31,15 @@ function Header({ toggleVrMode }) {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  const handleSignInClick = () => {
+    setShowPlantAuth(true);
+    setShowProfileDropdown(false);
+  };
+
+  const closePlantAuth = () => {
+    setShowPlantAuth(false);
+  };
 
   const handleFileChange = (e) => {
     setResult(null);
@@ -47,7 +61,7 @@ function Header({ toggleVrMode }) {
 
       try {
         const res = await axios.post(
-          "https://api.plant.id/v2/identify",
+          "https://plant.id/api/v3",
           {
             images: [base64Image],
             plant_language: "en",
@@ -56,7 +70,7 @@ function Header({ toggleVrMode }) {
           {
             headers: {
               "Content-Type": "application/json",
-              "Api-Key": "YOUR_API_KEY_HERE",
+              "Api-Key": "aml3P28VWksWVgRrL6dhO1CK5LcW7nUvjru6gmF1wQ4oa6UzJg",
             },
           }
         );
@@ -103,8 +117,7 @@ function Header({ toggleVrMode }) {
 
   return (
     <>
-      <header id="header" className={`header fixed-top w-100 shadow-sm ${showPlantIdentifier ? 'd-none' : ''}`}>
-
+      <header id="header" className={`header fixed-top w-100 shadow-sm ${showPlantIdentifier || showPlantAuth ? 'd-none' : ''}`}>
         <TopBanner />
         <nav className="navbar navbar-expand-lg navbar-light container py-1">
           <NavLink to="/" className="navbar-brand d-flex align-items-center gap-2">
@@ -122,10 +135,10 @@ function Header({ toggleVrMode }) {
           </button>
           <div className={`collapse navbar-collapse justify-content-between${navOpen ? ' show' : ''}`}>
             <ul className="navbar-nav mx-auto gap-md-1 gap-2 align-items-center">
-              {['/', '/plants', '/pots', '/care', '/aboutme'].map((path, i) => (
+              {['/', '/plants', '/pots', '/care', '/gardentools', '/aboutme'].map((path, i) => (
                 <li className="nav-item" key={path}>
                   <NavLink to={path} className="nav-link">
-                    {['Home', 'Plants', 'Pots', 'Care', 'About'][i]}
+                    {['Home', 'Plants', 'Pots', 'Care','Garden Tools', 'About'][i]}
                   </NavLink>
                 </li>
               ))}
@@ -135,7 +148,7 @@ function Header({ toggleVrMode }) {
                 <input
                   type="text"
                   placeholder={placeholder}
-                  className="form-control form-control-sm rounded-pill pe-5 search-input"
+                  className="form-control form-control-sm rounded-pill pe-3 search-input"
                 />
                 <i className="search-icon fas fa-search position-absolute end-0 top-50 translate-middle-y me-3"></i>
               </div>
@@ -161,39 +174,55 @@ function Header({ toggleVrMode }) {
                 <i className="fa-solid fa-user"></i>
                 {showProfileDropdown && (
                   <div className="profile-dropdown-menu shadow-sm">
-                    <div className="dropdown-header">
-                      <div className="user-icon">
-                        <i className="fas fa-user-circle"></i>
-                      </div>
-                      <div className="user-info">
-                        <p className="username">Welcome, User</p>
-                        <p className="email">user@example.com</p>
-                      </div>
-                    </div>
-                    <div className="dropdown-divider"></div>
-                    <Link to="/account" className="dropdown-item">
-                      <i className="fas fa-user me-2"></i> My Account
-                    </Link>
-                    <Link to="/orders" className="dropdown-item">
-                      <i className="fas fa-box me-2"></i> My Orders
-                    </Link>
-                    <Link to="/wishlist" className="dropdown-item">
-                      <i className="fas fa-heart me-2"></i> Wishlist
-                    </Link>
-                    <Link to="/address" className="dropdown-item">
-                      <i className="fas fa-map-marker-alt me-2"></i> Saved Addresses
-                    </Link>
-                    <Link to="/checkout" className="dropdown-item">
-                      <i className="fas fa-credit-card me-2"></i> Payment Methods
-                    </Link>
-                    <Link to="/CustomerSupport" className="dropdown-item">
-                      <i className="fas fa-credit-card me-2"></i> Customer Support
-                    </Link>
-                    
-                    <div className="dropdown-divider"></div>
-                    <button className="dropdown-item logout-btn">
-                      <i className="fas fa-sign-out-alt me-2"></i> Logout
-                    </button>
+                    {!isLoggedIn ? (
+                      <>
+                        <div className="dropdown-header text-center">
+                          <div className="user-icon mb-2">
+                            <i className="fas fa-user-circle"></i>
+                          </div>
+                          <p className="text-muted mb-0">Please sign in to access your account</p>
+                        </div>
+                        <div className="dropdown-divider"></div>
+                        <button className="dropdown-item signin-btn text-center" onClick={handleSignInClick}>
+                          <i className="fas fa-sign-in-alt me-2"></i> Sign In
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <div className="dropdown-header">
+                          <div className="user-icon">
+                            <i className="fas fa-user-circle"></i>
+                          </div>
+                          <div className="user-info">
+                            <p className="username text-black">Welcome, {userInfo.name}</p>
+                            <p className="email">{userInfo.email}</p>
+                          </div>
+                        </div>
+                        <div className="dropdown-divider"></div>
+                        <Link to="/account" className="dropdown-item">
+                          <i className="fas fa-user me-2"></i> My Account
+                        </Link>
+                        <Link to="/orders" className="dropdown-item">
+                          <i className="fas fa-box me-2"></i> My Orders
+                        </Link>
+                        <Link to="/wishlist" className="dropdown-item">
+                          <i className="fas fa-heart me-2"></i> Wishlist
+                        </Link>
+                        <Link to="/address" className="dropdown-item">
+                          <i className="fas fa-map-marker-alt me-2"></i> Saved Addresses
+                        </Link>
+                        <Link to="/checkout" className="dropdown-item">
+                          <i className="fas fa-credit-card me-2"></i> Payment Methods
+                        </Link>
+                        <Link to="/CustomerSupport" className="dropdown-item">
+                          <i className="fas fa-headset me-2"></i> Customer Support
+                        </Link>
+                        <div className="dropdown-divider"></div>
+                        <button className="dropdown-item logout-btn" onClick={logout}>
+                          <i className="fas fa-sign-out-alt me-2"></i> Logout
+                        </button>
+                      </>
+                    )}
                   </div>
                 )}
               </div>
@@ -225,6 +254,20 @@ function Header({ toggleVrMode }) {
                 <p><strong>About:</strong> {plant.plant_details.wiki_description?.value || 'No info'}</p>
               </div>
             ))}
+          </div>
+        </div>
+      )}
+
+      {showPlantAuth && (
+        <div className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{ backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 1050 }}>
+          <div className="position-relative" style={{ maxWidth: '900px', width: '95%', maxHeight: '90vh', overflowY: 'auto' }}>
+            <button
+              className="btn btn-close position-absolute bg-white rounded-circle p-2 shadow"
+              style={{ top: '10px', right: '10px', zIndex: 1051 }}
+              onClick={closePlantAuth}
+              aria-label="Close"
+            ></button>
+            <PlantAuth onClose={closePlantAuth} />
           </div>
         </div>
       )}

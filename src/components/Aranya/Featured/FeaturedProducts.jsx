@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { products } from './productsData';
+import { products } from './productsData.js';
 import './FeaturedProducts.css';
 
 function FeaturedProducts() {
