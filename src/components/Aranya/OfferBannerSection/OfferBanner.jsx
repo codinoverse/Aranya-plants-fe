@@ -1,9 +1,8 @@
 
 import './OfferBanner.css';
-// import './src/assets';
-// import offerImg from './Aranya_v1/Aranya1/src/assets/offerimage1.png';
-// import offerImg1 from '/Aranya_v1/Aranya1/src/assets/offerbanner2.png';
-// import offerImg2 from "./Aranya_v1/Aranya1/src/assets/plantsandpots.png";
+import offerImg from '../../../assets/offerimage1.png';
+import offerImg1 from '../../../assets/offerimage2.png';
+import offerImg2 from "../../../assets/offerimage3.png";
 
 const OfferBanner = () => {
     return (
@@ -14,9 +13,9 @@ const OfferBanner = () => {
                 <p className="code-text mb-0">Use Code: <strong className="text-success">MONSOON200</strong></p>
             </div>
             <div className="img-section">
-                <img src="./Aranya_v1/Aranya1/src/assets/offerimage1.png" alt="Plants Offer" className="img-fluid banner-img" />
-                <img src="./Aranya_v1/Aranya1/src/assets/offerimage2.png" alt="Plants Offer" className="img-fluid banner-img" />
-                <img src="./Aranya_v1/Aranya1/src/assets/offerimage3.png" alt="Plants Offer" className="img-fluid banner-img" />
+                <img src={offerImg} alt="Plants Offer" className="img-fluid banner-img" />
+                <img src={offerImg2} alt="Plants Offer" className="img-fluid banner-img" />
+                <img src={offerImg1} alt="Plants Offer" className="img-fluid banner-img" />
             </div>
         </div>
     );
