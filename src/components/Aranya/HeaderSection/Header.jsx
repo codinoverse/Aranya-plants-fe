@@ -286,7 +286,7 @@ function Header({ toggleVrMode }) {
               >
                 <i className="fa-solid fa-user"></i>
                 {showProfileDropdown && (
-                  <div className="profile-dropdown-menu shadow-sm">
+                  <div className="profile-dropdown-profile shadow-sm">
                     {!isLoggedIn ? (
                       <>
                         <div className="dropdown-header text-center">
