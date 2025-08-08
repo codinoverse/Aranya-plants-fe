@@ -18,19 +18,86 @@ function Header({ toggleVrMode }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+  const [activeNavDropdown, setActiveNavDropdown] = useState(null);
   const profileDropdownRef = useRef(null);
+  const navDropdownRefs = useRef({});
+
+  // Navigation dropdown configurations
+  const navDropdowns = {
+    '/plants': {
+      title: 'Plants',
+      items: [
+        { label: 'Indoor Plants', path: '/plants/indoor', icon: 'fas fa-home' },
+        { label: 'Outdoor Plants', path: '/plants/outdoor', icon: 'fas fa-tree' },
+        { label: 'Flowering Plants', path: '/plants/flowering', icon: 'fas fa-flower-daffodil' },
+        { label: 'Succulents', path: '/plants/succulents', icon: 'fas fa-leaf' },
+        { label: 'Herbs', path: '/plants/herbs', icon: 'fas fa-seedling' },
+        { label: 'Fruit Plants', path: '/plants/fruits', icon: 'fas fa-apple-alt' }
+      ]
+    },
+    '/pots': {
+      title: 'Pots',
+      items: [
+        { label: 'Ceramic Pots', path: '/pots/ceramic', icon: 'fas fa-circle' },
+        { label: 'Plastic Pots', path: '/pots/plastic', icon: 'fas fa-recycle' },
+        { label: 'Hanging Pots', path: '/pots/hanging', icon: 'fas fa-link' },
+        { label: 'Self-Watering', path: '/pots/self-watering', icon: 'fas fa-tint' },
+        { label: 'Decorative Pots', path: '/pots/decorative', icon: 'fas fa-palette' },
+        { label: 'Large Planters', path: '/pots/large', icon: 'fas fa-expand' }
+      ]
+    },
+    '/care': {
+      title: 'Care',
+      items: [
+        { label: 'Plant Care Guides', path: '/care/guides', icon: 'fas fa-book' },
+        { label: 'Fertilizers', path: '/care/fertilizers', icon: 'fas fa-flask' },
+        { label: 'Pest Control', path: '/care/pest-control', icon: 'fas fa-bug' },
+        { label: 'Watering Tips', path: '/care/watering', icon: 'fas fa-tint' },
+        { label: 'Pruning Tools', path: '/care/pruning', icon: 'fas fa-cut' },
+        { label: 'Plant Health', path: '/care/health', icon: 'fas fa-heartbeat' }
+      ]
+    },
+    '/gardentools': {
+      title: 'Garden Tools',
+      items: [
+        { label: 'Hand Tools', path: '/gardentools/hand-tools', icon: 'fas fa-tools' },
+        { label: 'Watering Equipment', path: '/gardentools/watering', icon: 'fas fa-shower' },
+        { label: 'Soil & Compost', path: '/gardentools/soil', icon: 'fas fa-mountain' },
+        { label: 'Garden Gloves', path: '/gardentools/gloves', icon: 'fas fa-hand-paper' },
+        { label: 'Measuring Tools', path: '/gardentools/measuring', icon: 'fas fa-ruler' },
+        { label: 'Storage Solutions', path: '/gardentools/storage', icon: 'fas fa-box' }
+      ]
+    },
+    '/aboutme': {
+      title: 'About',
+      items: [
+        { label: 'Our Story', path: '/about/story', icon: 'fas fa-book-open' },
+        { label: 'Meet the Team', path: '/about/team', icon: 'fas fa-users' },
+        { label: 'Our Mission', path: '/about/mission', icon: 'fas fa-bullseye' },
+        { label: 'Contact Us', path: '/about/contact', icon: 'fas fa-envelope' },
+        { label: 'Careers', path: '/about/careers', icon: 'fas fa-briefcase' },
+        { label: 'Blog', path: '/about/blog', icon: 'fas fa-blog' }
+      ]
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target)) {
         setShowProfileDropdown(false);
       }
+      
+      // Handle nav dropdown click outside
+      if (activeNavDropdown && navDropdownRefs.current[activeNavDropdown] && 
+          !navDropdownRefs.current[activeNavDropdown].contains(event.target)) {
+        setActiveNavDropdown(null);
+      }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [activeNavDropdown]);
 
   const handleSignInClick = () => {
     setShowPlantAuth(true);
@@ -99,6 +166,12 @@ function Header({ toggleVrMode }) {
 
   const toggleProfileDropdown = () => {
     setShowProfileDropdown(!showProfileDropdown);
+    setActiveNavDropdown(null); // Close nav dropdowns when opening profile
+  };
+
+  const toggleNavDropdown = (path) => {
+    setActiveNavDropdown(activeNavDropdown === path ? null : path);
+    setShowProfileDropdown(false); // Close profile dropdown when opening nav dropdown
   };
 
   const fullText = "Search plants.....";
@@ -134,15 +207,58 @@ function Header({ toggleVrMode }) {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className={`collapse navbar-collapse justify-content-between${navOpen ? ' show' : ''}`}>
+
             <ul className="navbar-nav mx-auto gap-md-1 gap-2 align-items-center">
-              {['/', '/plants', '/pots', '/care', '/gardentools', '/aboutme'].map((path, i) => (
-                <li className="nav-item" key={path}>
-                  <NavLink to={path} className="nav-link">
-                    {['Home', 'Plants', 'Pots', 'Care','Garden Tools', 'About'][i]}
-                  </NavLink>
+              {/* Home Link (no dropdown) */}
+              <li className="nav-item">
+                <NavLink to="/" className="nav-link">
+                  Home
+                </NavLink>
+              </li>
+              
+              {/* Navigation items with dropdowns */}
+              {Object.entries(navDropdowns).map(([path, config]) => (
+                <li className="nav-item position-relative" key={path}
+                    ref={el => navDropdownRefs.current[path] = el}>
+                  <div 
+                    className="nav-link d-flex align-items-center cursor-pointer"
+                    onClick={() => toggleNavDropdown(path)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {config.title}
+                    
+                  </div>
+                  
+                  {activeNavDropdown === path && (
+                    <div className="profile-dropdown-menu shadow-sm" style={{ minWidth: '200px' }}>
+                      <div className="dropdown-header text-center">
+                        <p className="text-muted mb-0">{config.title} Categories</p>
+                      </div>
+                      <div className="dropdown-divider"></div>
+                      {config.items.map((item, index) => (
+                        <Link 
+                          key={index}
+                          to={item.path} 
+                          className="dropdown-item"
+                          onClick={() => setActiveNavDropdown(null)}
+                        >
+                          <i className={`${item.icon} me-2`}></i> {item.label}
+                        </Link>
+                      ))}
+                      <div className="dropdown-divider"></div>
+                      <Link 
+                        to={path} 
+                        className="dropdown-item text-center fw-bold"
+                        onClick={() => setActiveNavDropdown(null)}
+                      >
+                        View All {config.title}
+                      </Link>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
+            
             <div className="d-flex flex-column flex-sm-row gap-3 mb-3 mt-5 pt-3 mt-md-0 align-items-center">
               <div className="position-relative">
                 <input
