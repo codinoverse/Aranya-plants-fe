@@ -6,7 +6,6 @@ import TopBanner from '../TopBannerSection/TopBanner';
 import Logo from "/src/assets/Website-Logo.svg";
 import PlantAuth from '../SignupLoginSection/SignupLogin';
 import { AuthContext } from '../AuthContextSection/AuthContext';
-
 function Header({ toggleVrMode }) {
 
   const { isLoggedIn, userInfo, login, logout } = useContext(AuthContext);
@@ -49,10 +48,8 @@ function Header({ toggleVrMode }) {
     '/care': {
       title: 'Care',
       items: [
-        { label: 'Plant Care Guides', path: '/care/guides', icon: 'fas fa-book' },
+        { label: 'Plant Care', path: '/care/plantscare', icon: 'fas fa-book' },
         { label: 'Fertilizers', path: '/care/fertilizers', icon: 'fas fa-flask' },
-        { label: 'Pest Control', path: '/care/pest-control', icon: 'fas fa-bug' },
-        { label: 'Watering Tips', path: '/care/watering', icon: 'fas fa-tint' },
         { label: 'Pruning Tools', path: '/care/pruning', icon: 'fas fa-cut' },
         { label: 'Plant Health', path: '/care/health', icon: 'fas fa-heartbeat' }
       ]
