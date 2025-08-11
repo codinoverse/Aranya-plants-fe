@@ -1,53 +1,500 @@
-/* src/components/OfferBanner.css */
-.offer-banner {
-    background-color: #e0eec7;
-    background-image: url();
-    border-radius: 20px;
+/* OfferBanner.css */
+
+.offer-banner-container {
+    position: relative;
+    width: 100vw;
+    margin: 0;
+    margin-left: calc(-50vw + 50%);
     overflow: hidden;
-    margin: 20px 0;
-    height: 230px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.banner-slide {
+    position: relative;
+    min-height: 250px;
+    transition: all 0.7s ease-in-out;
+}
+
+.banner-slide.monstera-bg {
+    background-image: url('../../../assets/offerbannerwallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-slide.cactus-bg {
+    background-image: url('../../../assets/offerbannerwallpaper1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-slide.succulent-bg {
+    background-image: url('../../../assets/offerbannerwallpaper3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-background-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+}
+
+.banner-background-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 40px 40px;
+    background-repeat: repeat;
+    opacity: 0.2;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .text-section {
     flex: 1;
-    margin-left: 105px;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.text-section.animating {
+    transform: translateX(1rem);
+    opacity: 0;
+}
+
+.text-section.normal {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .discount-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #075e54;
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
 }
 
-.discount-title span {
-    color: #28a745;
-    font-size: 2.5rem;
+.discount-title .flat-text {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.discount-title .flat-text:hover {
+    transform: scale(1.05);
+}
+
+.discount-amount {
+    margin-left: 0.75rem;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.discount-amount:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .discount-subtitle {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.discount-subtitle:hover {
+    opacity: 1;
+}
+
+.code-section {
+    margin-top: 1rem;
 }
 
 .code-text {
-    font-size: 1rem;
-    background-color: #ccf5e1;
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-weight: 600;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
 }
 
-.img-section {
+.code-container {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.code-container:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.code-value {
+    color: #fef3c7;
+    /* text-yellow-200 */
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.code-icon {
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+    opacity: 0.75;
+}
+
+.image-section {
     flex-shrink: 0;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: row;
-    margin-right: 55px;
+    margin-left: 2rem;
+    transition: all 0.5s ease;
 }
 
-.banner-img {
-    max-height: 220px;
-    width: auto;
+.image-section.animating {
+    transform: translateX(1rem);
+    opacity: 0;
+}
+
+.image-section.normal {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.plant-container {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.plant-container:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.plant-svg {
+    width: 10rem;
+    height: 10rem;
+    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+}
+
+.floating-element-1 {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #fde047;
+    /* bg-yellow-300 */
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.floating-element-2 {
+    position: absolute;
+    bottom: -0.5rem;
+    left: -0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #f9a8d4;
+    /* bg-pink-300 */
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation-delay: 0.3s;
+}
+
+.floating-element-3 {
+    position: absolute;
+    top: 1rem;
+    left: -1rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #86efac;
+    /* bg-green-300 */
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: bounce 1s infinite;
+    animation-delay: 0.5s;
+}
+
+.sparkle-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.sparkle-1 {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: #fef3c7;
+    /* text-yellow-200 */
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation-delay: 0.7s;
+}
+
+.sparkle-2 {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: #bbf7d0;
+    /* text-green-200 */
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation-delay: 1s;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-button.prev {
+    left: 1rem;
+}
+
+.nav-button.next {
+    right: 1rem;
+}
+
+.nav-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-button.prev:hover svg {
+    transform: translateX(-0.25rem);
+}
+
+.nav-button.next:hover svg {
+    transform: translateX(0.25rem);
+}
+
+.slide-indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.75rem;
+    z-index: 20;
+}
+
+.indicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: white;
+    transform: scale(1.25);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.indicator.inactive {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.indicator.inactive:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    transform: scale(1.1);
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: white;
+    transition: all 0.075s ease-linear;
+}
+
+.shine-effect {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, white, transparent);
+    opacity: 0;
+    transform: skew(-12deg) translateX(100%);
+    transition: all 1s ease;
+    pointer-events: none;
+}
+
+.offer-banner-container:hover .shine-effect {
+    opacity: 0.1;
+    transform: skew(-12deg) translateX(100%);
+}
+
+/* Plant-specific animations */
+.monstera-leaves {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.cactus-body {
+    animation: bounce 2s infinite;
+}
+
+.cactus-arms {
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+.cactus-flower {
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.succulent-layers {
+    animation: pulse 3.5s ease-in-out infinite;
+}
+
+.succulent-center {
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Keyframe animations */
+@keyframes ping {
+
+    75%,
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .banner-content {
+        padding: 2.5rem 3rem;
+    }
+
+    .discount-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-content {
+        padding: 2rem 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .discount-title {
+        font-size: 2.5rem;
+    }
+
+    .discount-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .plant-svg {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .image-section {
+        margin-left: 0;
+    }
+
+    .nav-button {
+        padding: 0.5rem;
+        top: 40%;
+    }
+
+    .nav-button svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .banner-slide {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .discount-title {
+        font-size: 2rem;
+    }
+
+    .discount-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .plant-svg {
+        width: 6rem;
+        height: 6rem;
+    }
 }
