@@ -29,20 +29,20 @@ function Header({ toggleVrMode }) {
         { label: 'Indoor Plants', path: '/plants/indoor', icon: 'fas fa-home' },
         { label: 'Outdoor Plants', path: '/plants/outdoor', icon: 'fas fa-tree' },
         { label: 'Flowering Plants', path: '/plants/flowering', icon: 'fas fa-flower-daffodil' },
-        { label: 'Succulents', path: '/plants/succulents', icon: 'fas fa-leaf' },
-        { label: 'Herbs', path: '/plants/herbs', icon: 'fas fa-seedling' },
-        { label: 'Fruit Plants', path: '/plants/fruits', icon: 'fas fa-apple-alt' }
+        { label: 'Carpet Lawn', path: '/plants/carpet-lawn', icon: 'fas fa-leaf' },
+        { label: 'Live Store', path: '/live-store', icon: 'fas fa-store' },
       ]
     },
     '/pots': {
       title: 'Pots',
       items: [
-        { label: 'Ceramic Pots', path: '/pots/ceramic', icon: 'fas fa-circle' },
-        { label: 'Plastic Pots', path: '/pots/plastic', icon: 'fas fa-recycle' },
-        { label: 'Hanging Pots', path: '/pots/hanging', icon: 'fas fa-link' },
-        { label: 'Self-Watering', path: '/pots/self-watering', icon: 'fas fa-tint' },
-        { label: 'Decorative Pots', path: '/pots/decorative', icon: 'fas fa-palette' },
-        { label: 'Large Planters', path: '/pots/large', icon: 'fas fa-expand' }
+        { label: 'Ceramic Pots', path: '/pots', icon: 'fas fa-circle' },
+        { label: 'Terracotta Pots',path:'/pots', icon: 'fas fa-square'},
+        { label: 'Metal Pots', path:'/pots',icon: 'fas fa-cube',},
+        { label: 'Plastic Pots', path: '/pots/', icon: 'fas fa-recycle' },
+        { label: 'Hanging Pots', path: '/pots/', icon: 'fas fa-link' },
+        { label: 'Planters', path: '/pots/', icon: 'fas fa-expand' },
+          
       ]
     },
     '/care': {
