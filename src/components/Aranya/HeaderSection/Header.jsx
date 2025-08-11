@@ -58,10 +58,7 @@ function Header({ toggleVrMode }) {
       title: 'Garden Tools',
       items: [
         { label: 'Hand Tools', path: '/gardentools/hand-tools', icon: 'fas fa-tools' },
-        { label: 'Watering Equipment', path: '/gardentools/watering', icon: 'fas fa-shower' },
-        { label: 'Soil & Compost', path: '/gardentools/soil', icon: 'fas fa-mountain' },
-        { label: 'Garden Gloves', path: '/gardentools/gloves', icon: 'fas fa-hand-paper' },
-        { label: 'Measuring Tools', path: '/gardentools/measuring', icon: 'fas fa-ruler' },
+        { label: 'Kitchen Garden Tools', path: '/gardentools/kitchen-garden', icon: 'fas fa-seedling' },
         { label: 'Storage Solutions', path: '/gardentools/storage', icon: 'fas fa-box' }
       ]
     },
@@ -72,8 +69,7 @@ function Header({ toggleVrMode }) {
         { label: 'Meet the Team', path: '/about/team', icon: 'fas fa-users' },
         { label: 'Our Mission', path: '/about/mission', icon: 'fas fa-bullseye' },
         { label: 'Contact Us', path: '/about/contact', icon: 'fas fa-envelope' },
-        { label: 'Careers', path: '/about/careers', icon: 'fas fa-briefcase' },
-        { label: 'Blog', path: '/about/blog', icon: 'fas fa-blog' }
+        { label: 'Careers', path: '/about/careers', icon: 'fas fa-briefcase' }
       ]
     }
   };
