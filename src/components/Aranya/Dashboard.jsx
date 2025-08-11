@@ -40,7 +40,7 @@ function Dashboard() {
                     {/* <Hero vrMode={vrMode} /> */}
                 </div>
 
-                <div style={{marginTop:"-20px"}}>
+                <div style={{marginTop:"-5px"}}>
                     <DownBanner />
                 </div>
 

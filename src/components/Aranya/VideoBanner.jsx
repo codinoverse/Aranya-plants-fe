@@ -10,7 +10,6 @@ const VideoBanner = () => {
 
       <div className="banner-content position-absolute top-50 start-50 translate-middle text-center">
         <h1 className="fw-bold banner-heading">Aranya Plants & Pots</h1>
-        <p className="banner-subtext">The best season to start afresh.</p>
       </div>
     </div>
   );
