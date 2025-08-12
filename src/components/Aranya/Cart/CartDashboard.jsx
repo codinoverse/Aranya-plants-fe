@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from "../HeaderSection/Header";
 import Chatbot from '../Chatbot/Chatbot';
 import Footer from '../FooterSection/Footer';
-import Cart from './Cart';
+import CenteredCartSidebar from './Cart';
 
 function CartDashboard() {
     const [vrMode, setVrMode] = useState(false);
@@ -27,8 +27,7 @@ function CartDashboard() {
         <>
             <div className="leaf-bg" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)' }}>
                <div className='mb-5'><Header toggleVrMode={toggleVrMode}/> </div> 
-                
-                <Cart/>
+               <div  style={{marginTop:"100px"}}> <CenteredCartSidebar /></div>
                 <Chatbot />
                 <Footer />
             </div>
