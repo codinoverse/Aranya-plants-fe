@@ -6,7 +6,9 @@ import TopBanner from '../TopBannerSection/TopBanner';
 import Logo from "/src/assets/Website-Logo.svg";
 import PlantAuth from '../SignupLoginSection/SignupLogin';
 import { AuthContext } from '../AuthContextSection/AuthContext';
-function Header({ toggleVrMode }) {
+
+
+const Header = ({ toggleVrMode }) => {
 
   const { isLoggedIn, userInfo, login, logout } = useContext(AuthContext);
   const [navOpen, setNavOpen] = useState(false);
@@ -58,7 +60,7 @@ function Header({ toggleVrMode }) {
       title: 'Garden Tools',
       items: [
         { label: 'Hand Tools', path: '/gardentools/hand-tools', icon: 'fas fa-tools' },
-        { label: 'Kitchen Garden Tools', path: '/gardentools/kitchen-garden', icon: 'fas fa-seedling' },
+        { label: 'Kitchen Garden Tools', path: '/gardentools/kitchengardentools', icon: 'fas fa-seedling' },
         { label: 'Storage Solutions', path: '/gardentools/storage', icon: 'fas fa-box' }
       ]
     },
