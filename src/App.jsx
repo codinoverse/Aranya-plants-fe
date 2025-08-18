@@ -16,6 +16,8 @@ import CustomerCareDashboard from './components/CustomerSupport/CustomerSupportD
 import PlantAuth from './components/Aranya/SignupLoginSection/SignupLogin';
 import { AuthProvider } from './components/Aranya/AuthContextSection/AuthContext';
 import BlogPage from './components/Aranya/Blog/BlogMain';
+import KgtoolsDashboard from './components/Aranya/KitchenGardenTools/KgDashboard';
+
 
 
 
@@ -39,6 +41,7 @@ function App() {
             <Route path="/wishlist" element={<PlantWishListDashboard />} />
             <Route path='/CustomerSupport' element={<CustomerCareDashboard />} />
             <Route path='/signup' element={<PlantAuth />} />
+            <Route path='/gardentools/kitchengardentools' element={<KgtoolsDashboard/> } />
           </Routes>
         </Router>
       </AuthProvider>
