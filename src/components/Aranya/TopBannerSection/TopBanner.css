@@ -4,6 +4,102 @@
   background-color: #178205;
   font-size: 0.9rem;
   height: 40px;
+  display: flex;
   color: rgb(255, 255, 255);
   font-weight: 600;
+}
+
+/* ---------- Phones (portrait) ---------- */
+@media only screen and (max-width: 480px) {
+  .top-banner {
+    background-image: url('/src/assets/wallpaper1.jpg');
+    background-color: #178205;
+    font-size: 5.5px;
+    gap: 2px;
+    height: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 1200;
+  }
+
+  span {
+    display: flex;
+    flex-direction: row;
+  }
+
+}
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .top-banner {
+    background-image: url('/src/assets/wallpaper1.jpg');
+    background-color: #178205;
+    font-size: 10.5px;
+    gap: 2px;
+    height: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 1200;
+  }
+
+  span {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* iPad Air (Portrait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 834px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .top-banner {
+    background-image: url('/src/assets/wallpaper1.jpg');
+    background-color: #178205;
+    font-size: 8.5px;
+    gap: 2px;
+    height: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 1200;
+  }
+
+  span {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* iPad Air (Landscape) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 834px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles for iPad Air in landscape */
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .top-banner {
+    background-image: url('/src/assets/wallpaper1.jpg');
+    background-color: #178205;
+    font-size: 8.5px;
+    gap: 2px;
+    height: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 1200;
+  }
+
+  span {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+
+/* ---------- Laptops / Desktops ---------- */
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+  /* MacBook Air, standard laptops */
+}
+
+/* ---------- Large desktops ---------- */
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  /* Larger laptops, iMac 21", big monitors */
+}
+
+/* ---------- Extra large / 4K screens ---------- */
+@media only screen and (min-width: 1920px) {
+  /* 1080p/1440p monitors, 4K displays */
 }

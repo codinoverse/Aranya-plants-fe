@@ -486,7 +486,7 @@
     }
 
     .discount-title {
-        font-size: 2rem;
+        font-size: 15px;
     }
 
     .discount-subtitle {
@@ -498,3 +498,4 @@
         height: 6rem;
     }
 }
+

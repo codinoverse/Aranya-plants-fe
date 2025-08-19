@@ -10,6 +10,7 @@ import Choose from './WhyChoose/Choose';
 import OfferBanner from './OfferBannerSection/OfferBanner.jsx';
 import DownBanner from './DownBanners/DownBanner';
 import VideoBanner from './VideoBanner';
+import "./Dashboard.css";
 
 
 function Dashboard() {
@@ -35,7 +36,7 @@ function Dashboard() {
         <>
             <div className="leaf-bg" >
                 <Header toggleVrMode={toggleVrMode} />
-                <div style={{ "marginTop": "124px" }}>
+                <div className="content">
                     <OfferBanner />
                     {/* <Hero vrMode={vrMode} /> */}
                 </div>

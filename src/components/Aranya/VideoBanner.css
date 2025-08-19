@@ -29,3 +29,23 @@
   color: #43a047;
   font-style: italic;
 }
+
+
+
+@media (max-width: 768px) {
+    .video-banner {
+        height: 40vh;
+    }
+
+    .banner-heading {
+        font-size: 1.5rem;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .banner-subtext {
+        font-size: 1.2rem;
+        text-align: center;
+        padding-top: 50px;
+    }
+}
