@@ -100,7 +100,7 @@
   border-radius: 1.5rem !important;
   border: none;
   background: var(--bs-pagination-bg);
-  color: var(--bs-pagination-color);
+  color: black;
   font-weight: 600;
   min-width: 2.5rem;
   min-height: 2.5rem;
@@ -112,12 +112,12 @@
 }
 .pots-pagination .page-link:hover, .pots-pagination .page-link:focus {
   background: var(--bs-pagination-hover-bg);
-  color: var(--bs-pagination-hover-color);
+  color: green;
   box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.10);
   transform: scale(1.08);
 }
 .pots-pagination .page-item.active .page-link {
-  background: var(--bs-pagination-active-bg);
+  background: green;
   color: var(--bs-pagination-active-color);
   font-weight: 700;
   box-shadow: 0 4px 16px 0 rgba(44, 183, 78, 0.16);
