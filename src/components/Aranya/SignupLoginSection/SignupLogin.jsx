@@ -5,7 +5,7 @@ import './PlantAuth.css';
 import Logo from "/src/assets/Website-Logo.svg";
 import { AuthContext } from '../AuthContextSection/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { jwtDecode } from "jwt-decode"; // ✅ fixed import for v4
+import { jwtDecode } from "jwt-decode"; 
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 const api = axios.create({
