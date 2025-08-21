@@ -301,11 +301,8 @@ const Header = ({ toggleVrMode }) => {
                       ) : (
                         <>
                           <div className="dropdown-header">
-                            <div className="user-icon">
-                              <i className="fas fa-user-circle"></i>
-                            </div>
                             <div className="user-info">
-                              <p className="username text-black">Welcome, {userInfo.name}</p>
+                              <p className="username text-black">{userInfo.name}</p>
                               <p className="email">{userInfo.email}</p>
                             </div>
                           </div>

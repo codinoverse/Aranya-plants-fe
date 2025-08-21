@@ -1,21 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
-import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PlantAuth.css';
 import Logo from "/src/assets/Website-Logo.svg";
 import { AuthContext } from '../AuthContextSection/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { jwtDecode } from "jwt-decode"; // ✅ fixed import for v4
-
-const baseURL = import.meta.env.VITE_API_BASE_URL;
-const api = axios.create({
-  baseURL: baseURL,
-  timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-  },
-});
+import { jwtDecode } from "jwt-decode"; 
 
 const PlantAuth = ({ onClose }) => {
   const { login } = useContext(AuthContext);
@@ -28,7 +17,6 @@ const PlantAuth = ({ onClose }) => {
     password: '',
     phone: '',
     rememberMe: false,
-    googleToken: null,
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -36,15 +24,12 @@ const PlantAuth = ({ onClose }) => {
 
   // Load Google script
   useEffect(() => {
-    const loadGoogleAPI = () => {
-      if (window.google) return;
-      const script = document.createElement('script');
-      script.src = 'https://accounts.google.com/gsi/client';
-      script.async = true;
-      script.defer = true;
-      document.body.appendChild(script);
-    };
-    loadGoogleAPI();
+    if (window.google) return;
+    const script = document.createElement('script');
+    script.src = 'https://accounts.google.com/gsi/client';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
   }, []);
 
   const handleInputChange = (e) => {
@@ -56,47 +41,27 @@ const PlantAuth = ({ onClose }) => {
     setError('');
   };
 
-  // Google Sign-In/Sign-Up Handler
+  // Google Sign-In/Sign-Up Handler (Frontend Only)
   const handleGoogleAuth = async (credential) => {
     setGoogleLoading(true);
     try {
       const decoded = jwtDecode(credential);
 
-      if (currentView === "signup") {
-        // Prefill signup form with Google data
-        setFormData((prev) => ({
-          ...prev,
-          firstName: decoded.given_name || "",
-          lastName: decoded.family_name || "",
-          email: decoded.email || "",
-          googleToken: credential,
-        }));
-        setGoogleLoading(false);
-        return;
-      }
+      const user = {
+        name: `${decoded.given_name || ''} ${decoded.family_name || ''}`.trim(),
+        email: decoded.email,
+        googleId: decoded.sub,
+        picture: decoded.picture,
+      };
 
-      // LOGIN flow
-      const response = await api.post("/users/google-signin", {
-        googleToken: credential,
-      });
-
-      login({
-        name: response.data.name || response.data.firstName || "User",
-        email: response.data.email,
-        phone: response.data.phone,
-        userId: response.data.userId,
-        googleId: response.data.googleId,
-      });
+      // Save user in context
+      login(user);
 
       onClose && onClose();
       navigate("/");
     } catch (err) {
       console.error("Google Auth Error:", err);
-      let errorMessage = "Google authentication failed. Please try again.";
-      if (err.response?.data?.message) {
-        errorMessage = err.response.data.message;
-      }
-      setError(errorMessage);
+      setError("Google authentication failed. Please try again.");
     } finally {
       setGoogleLoading(false);
     }
@@ -129,80 +94,44 @@ const PlantAuth = ({ onClose }) => {
       } else if (currentView === 'signup') {
         initializeGoogleSignIn('google-signup-btn', 'signup_with');
       }
-    }, 100);
+    }, 200);
     return () => clearTimeout(timer);
   }, [currentView]);
 
-  const handleSubmit = async (e) => {
+  // Normal form submit (dummy frontend only)
+  const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    try {
+    setTimeout(() => {
       if (currentView === 'login') {
         if (!formData.phone || !formData.password) {
           setError('Please enter both mobile number and password');
-          setLoading(false);
-          return;
+        } else {
+          login({
+            name: "Demo User",
+            email: formData.email || "demo@example.com",
+            phone: formData.phone,
+          });
+          onClose && onClose();
+          navigate('/');
         }
-
-        const response = await api.post('/users/login-mobile', {
-          phone: formData.phone,
-          password: formData.password,
-        });
-
-        login({
-          name: response.data.firstName || 'User',
-          email: response.data.email,
-          phone: formData.phone,
-          userId: response.data.userId,
-        });
-        onClose && onClose();
-        navigate('/');
-
       } else if (currentView === 'signup') {
         if (!formData.firstName || !formData.lastName || !formData.phone || !formData.password) {
           setError('Please fill in all required fields');
-          setLoading(false);
-          return;
+        } else {
+          login({
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email || "demo@example.com",
+            phone: formData.phone,
+          });
+          onClose && onClose();
+          navigate('/');
         }
-
-        const signupData = {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email || null,
-          password: formData.password,
-          phone: formData.phone,
-          googleToken: formData.googleToken || null,
-        };
-
-        // ✅ Fixed endpoint
-        const endpoint = formData.googleToken ? '/users/google' : '/users/register';
-        const response = await api.post(endpoint, signupData);
-
-        login({
-          name: `${formData.firstName} ${formData.lastName}`,
-          email: formData.email,
-          phone: formData.phone,
-          userId: response.data.userId,
-        });
-        onClose && onClose();
-        navigate('/');
       }
-    } catch (err) {
-      console.error('API Error:', err);
-      let errorMessage = 'An error occurred. Please try again.';
-      if (err.response) {
-        errorMessage = err.response.data?.message || `Request failed with status ${err.response.status}`;
-      } else if (err.request) {
-        errorMessage = 'Network error. Please check your connection.';
-      } else {
-        errorMessage = err.message;
-      }
-      setError(errorMessage);
-    } finally {
       setLoading(false);
-    }
+    }, 800);
   };
 
   const resetForm = () => {
@@ -213,7 +142,6 @@ const PlantAuth = ({ onClose }) => {
       password: '',
       phone: '',
       rememberMe: false,
-      googleToken: null,
     });
     setError('');
   };
