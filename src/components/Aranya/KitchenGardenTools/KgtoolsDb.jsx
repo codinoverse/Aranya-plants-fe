@@ -1,5 +1,5 @@
-import trowel from "../../../assets/Gardentools/trowel.jpg";
-
+  import trowel from "../../../assets/Gardentools/trowel.jpg";
+  import './Kgtools.css'; 
 const KitchenTools = () => {
   const categories = [
     { name: 'Basic Garden', bgColor: '#fff', items: [
@@ -61,7 +61,7 @@ const KitchenTools = () => {
                     <h5 className="card-title" style={{ color: '#2c3e50', fontSize: '1.1rem' }}>{item.name}</h5>
                     <p className="card-text text-muted small">{item.desc}</p>
                     <p className="card-text"><strong style={{ color: '#28a745' }}>{item.price}</strong></p>
-                    <a href="#" className="btn btn-success btn-sm w-100">Add to Cart</a>
+                    <button href="#" id="cart-btn" className="btn btn-sm w-100">Add to Cart</button>
                   </div>
                 </div>
               </div>

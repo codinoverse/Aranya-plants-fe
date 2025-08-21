@@ -6,6 +6,8 @@
   display: flex;
   align-items: center;
   position: relative;
+  padding-top: 0.5em;
+ 
 }
 
 .marquee-track {
@@ -59,3 +61,5 @@
     font-weight: 600;
   }
 }
+
+

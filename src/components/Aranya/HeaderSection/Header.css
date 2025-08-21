@@ -374,11 +374,12 @@ header#header .fa-lg {
   .icon-group {
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 5px;
   }
 
   .icon-btns {
     flex: 1;
-    max-width: 48px;
+    max-width: 40px;
   }
 }
 
@@ -405,3 +406,29 @@ header#header .fa-lg {
     gap: 1rem;
   }
 }
+
+/* General iPad breakpoint range */
+@media (min-width: 744px) and (max-width: 1024px) {
+  .features {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0px;
+  }
+}
+
+/* Very large screens (4K/5K iMacs, external displays)
+@media (min-width: 1440px) {
+    nav{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; 
+      background-color: red;
+      width: 100%;
+    }
+
+    .main-logo{
+      max-height: 16vh;
+    }
+} */

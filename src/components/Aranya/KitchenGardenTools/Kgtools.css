@@ -9,6 +9,11 @@ body {
   transition: transform 0.2s;
 }
 
+#cart-btn{ 
+  background-color: #28a745; 
+  color: #fff;  
+}
+
 .card:hover {
   transform: translateY(-5px);
 }
@@ -18,13 +23,8 @@ body {
   object-fit: cover;
 }
 
-.btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-  font-size: 0.9rem;
-}
 
-.btn-success:hover {
+.cart-btn:hover {
   background-color: #218838;
   border-color: #1e7e34;
 }
