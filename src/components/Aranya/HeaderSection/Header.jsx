@@ -7,9 +7,7 @@ import Logo from "/src/assets/Website-Logo.svg";
 import PlantAuth from '../SignupLoginSection/SignupLogin';
 import { AuthContext } from '../AuthContextSection/AuthContext';
 
-
 const Header = ({ toggleVrMode }) => {
-
   const { isLoggedIn, userInfo, login, logout } = useContext(AuthContext);
   const [navOpen, setNavOpen] = useState(false);
   const [showPlantIdentifier, setShowPlantIdentifier] = useState(false);
@@ -39,12 +37,12 @@ const Header = ({ toggleVrMode }) => {
       title: 'Pots',
       items: [
         { label: 'Ceramic Pots', path: '/pots', icon: 'fas fa-circle' },
-        { label: 'Terracotta Pots',path:'/pots', icon: 'fas fa-square'},
-        { label: 'Metal Pots', path:'/pots',icon: 'fas fa-cube',},
+        { label: 'Terracotta Pots', path: '/pots', icon: 'fas fa-square' },
+        { label: 'Metal Pots', path: '/pots', icon: 'fas fa-cube', },
         { label: 'Plastic Pots', path: '/pots/', icon: 'fas fa-recycle' },
         { label: 'Hanging Pots', path: '/pots/', icon: 'fas fa-link' },
         { label: 'Planters', path: '/pots/', icon: 'fas fa-expand' },
-          
+
       ]
     },
     '/care': {
@@ -81,10 +79,10 @@ const Header = ({ toggleVrMode }) => {
       if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target)) {
         setShowProfileDropdown(false);
       }
-      
+
       // Handle nav dropdown click outside
-      if (activeNavDropdown && navDropdownRefs.current[activeNavDropdown] && 
-          !navDropdownRefs.current[activeNavDropdown].contains(event.target)) {
+      if (activeNavDropdown && navDropdownRefs.current[activeNavDropdown] &&
+        !navDropdownRefs.current[activeNavDropdown].contains(event.target)) {
         setActiveNavDropdown(null);
       }
     };
@@ -169,6 +167,8 @@ const Header = ({ toggleVrMode }) => {
     setShowProfileDropdown(false); // Close profile dropdown when opening nav dropdown
   };
 
+
+
   const fullText = "Search plants.....";
   const [placeholder, setPlaceholder] = useState("");
   const [index, setIndex] = useState(0);
@@ -210,20 +210,20 @@ const Header = ({ toggleVrMode }) => {
                   Home
                 </NavLink>
               </li>
-              
+
               {/* Navigation items with dropdowns */}
               {Object.entries(navDropdowns).map(([path, config]) => (
                 <li className="nav-item position-relative" key={path}
-                    ref={el => navDropdownRefs.current[path] = el}>
-                  <div 
+                  ref={el => navDropdownRefs.current[path] = el}>
+                  <div
                     className="nav-link d-flex align-items-center cursor-pointer"
                     onClick={() => toggleNavDropdown(path)}
                     style={{ cursor: 'pointer' }}
                   >
                     {config.title}
-                    
+
                   </div>
-                  
+
                   {activeNavDropdown === path && (
                     <div className="profile-dropdown-menu shadow-sm" style={{ minWidth: '200px' }}>
                       <div className="dropdown-header text-center">
@@ -231,9 +231,9 @@ const Header = ({ toggleVrMode }) => {
                       </div>
                       <div className="dropdown-divider"></div>
                       {config.items.map((item, index) => (
-                        <Link 
+                        <Link
                           key={index}
-                          to={item.path} 
+                          to={item.path}
                           className="dropdown-item"
                           onClick={() => setActiveNavDropdown(null)}
                         >
@@ -241,8 +241,8 @@ const Header = ({ toggleVrMode }) => {
                         </Link>
                       ))}
                       <div className="dropdown-divider"></div>
-                      <Link 
-                        to={path} 
+                      <Link
+                        to={path}
                         className="dropdown-item text-center fw-bold"
                         onClick={() => setActiveNavDropdown(null)}
                       >
@@ -253,89 +253,90 @@ const Header = ({ toggleVrMode }) => {
                 </li>
               ))}
             </ul>
-            
-            <div className="d-flex flex-column flex-sm-row gap-3 mb-3 mt-5 pt-3 mt-md-0 align-items-center">
-              <div className="position-relative">
+
+            <div className="features d-flex align-items-center gap-2" id='featured'>
+              <div className="position-relative search-container">
                 <input
                   type="text"
                   placeholder={placeholder}
-                  className="form-control form-control-sm rounded-pill pe-3 search-input"
+                  className="form-control rounded-pill pe-5 search-input"
+                  id='search-input'
                 />
-                <i className="search-icon fas fa-search position-absolute end-0 top-50 translate-middle-y me-3"></i>
+                <i className="search-icon fas fa-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
               </div>
-              <button className="icon-btns btn-sm rounded-circle" title="Image Search" onClick={handleImageSearchClick}>
-                <i className="fas fa-camera"></i>
-              </button>
-              <button className="icon-btns btn-sm rounded-circle" title="Live Camera" onClick={() => alert('Camera access requested!')}>
-                <i className="fas fa-video"></i>
-              </button>
-              <button className="icon-btns btn-sm rounded-circle" title="VR Mode" onClick={toggleVrMode}>
-                <i className="fas fa-vr-cardboard"></i>
-              </button>
-              <Link to="/cart">
-                <div className='icon-btns btn-sm rounded-circle'>
-                  <i className="fas fa-shopping-cart text-white"></i>
+              <div className="icon-group d-flex gap-2">
+                <button className="icon-btns btn btn-sm rounded-circle" title="Image Search" onClick={handleImageSearchClick}>
+                  <i className="fas fa-camera"></i>
+                </button>
+                <button className="icon-btns btn btn-sm rounded-circle" title="Live Camera" onClick={() => alert('Camera access requested!')}>
+                  <i className="fas fa-video"></i>
+                </button>
+                <button className="icon-btns btn btn-sm rounded-circle" title="VR Mode" onClick={toggleVrMode}>
+                  <i className="fas fa-vr-cardboard"></i>
+                </button>
+                <Link to="/cart" className="icon-btns btn btn-sm rounded-circle">
+                  <i className="fas fa-shopping-cart"></i>
+                </Link>
+                <div
+                  className='icon-btns btn btn-sm rounded-circle profile-icon position-relative'
+                  onClick={toggleProfileDropdown}
+                  ref={profileDropdownRef}
+                >
+                  <i className="fa-solid fa-user"></i>
+                  {showProfileDropdown && (
+                    <div className="profile-dropdown-profile shadow-sm">
+                      {!isLoggedIn ? (
+                        <>
+                          <div className="dropdown-header text-center">
+                            <div className="user-icon mb-2">
+                              <i className="fas fa-user-circle"></i>
+                            </div>
+                            <p className="text-muted mb-0">Please sign in to access your account</p>
+                          </div>
+                          <div className="dropdown-divider"></div>
+                          <button className="dropdown-item signin-btn text-center" onClick={handleSignInClick}>
+                            <i className="fas fa-sign-in-alt me-2"></i> Sign In
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          <div className="dropdown-header">
+                            <div className="user-icon">
+                              <i className="fas fa-user-circle"></i>
+                            </div>
+                            <div className="user-info">
+                              <p className="username text-black">Welcome, {userInfo.name}</p>
+                              <p className="email">{userInfo.email}</p>
+                            </div>
+                          </div>
+                          <div className="dropdown-divider"></div>
+                          <Link to="/account" className="dropdown-item">
+                            <i className="fas fa-user me-2"></i> My Account
+                          </Link>
+                          <Link to="/orders" className="dropdown-item">
+                            <i className="fas fa-box me-2"></i> My Orders
+                          </Link>
+                          <Link to="/wishlist" className="dropdown-item">
+                            <i className="fas fa-heart me-2"></i> Wishlist
+                          </Link>
+                          <Link to="/address" className="dropdown-item">
+                            <i className="fas fa-map-marker-alt me-2"></i> Saved Addresses
+                          </Link>
+                          <Link to="/checkout" className="dropdown-item">
+                            <i className="fas fa-credit-card me-2"></i> Payment Methods
+                          </Link>
+                          <Link to="/CustomerSupport" className="dropdown-item">
+                            <i className="fas fa-headset me-2"></i> Customer Support
+                          </Link>
+                          <div className="dropdown-divider"></div>
+                          <button className="dropdown-item logout-btn" onClick={logout}>
+                            <i className="fas fa-sign-out-alt me-2"></i> Logout
+                          </button>
+                        </>
+                      )}
+                    </div>
+                  )}
                 </div>
-              </Link>
-              <div
-                className='icon-btns btn-sm rounded-circle profile-icon position-relative'
-                onClick={toggleProfileDropdown}
-                ref={profileDropdownRef}
-              >
-                <i className="fa-solid fa-user"></i>
-                {showProfileDropdown && (
-                  <div className="profile-dropdown-profile shadow-sm">
-                    {!isLoggedIn ? (
-                      <>
-                        <div className="dropdown-header text-center">
-                          <div className="user-icon mb-2">
-                            <i className="fas fa-user-circle"></i>
-                          </div>
-                          <p className="text-muted mb-0">Please sign in to access your account</p>
-                        </div>
-                        <div className="dropdown-divider"></div>
-                        <button className="dropdown-item signin-btn text-center" onClick={handleSignInClick}>
-                          <i className="fas fa-sign-in-alt me-2"></i> Sign In
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <div className="dropdown-header">
-                          <div className="user-icon">
-                            <i className="fas fa-user-circle"></i>
-                          </div>
-                          <div className="user-info">
-                            <p className="username text-black">Welcome, {userInfo.name}</p>
-                            <p className="email">{userInfo.email}</p>
-                          </div>
-                        </div>
-                        <div className="dropdown-divider"></div>
-                        <Link to="/account" className="dropdown-item">
-                          <i className="fas fa-user me-2"></i> My Account
-                        </Link>
-                        <Link to="/orders" className="dropdown-item">
-                          <i className="fas fa-box me-2"></i> My Orders
-                        </Link>
-                        <Link to="/wishlist" className="dropdown-item">
-                          <i className="fas fa-heart me-2"></i> Wishlist
-                        </Link>
-                        <Link to="/address" className="dropdown-item">
-                          <i className="fas fa-map-marker-alt me-2"></i> Saved Addresses
-                        </Link>
-                        <Link to="/checkout" className="dropdown-item">
-                          <i className="fas fa-credit-card me-2"></i> Payment Methods
-                        </Link>
-                        <Link to="/CustomerSupport" className="dropdown-item">
-                          <i className="fas fa-headset me-2"></i> Customer Support
-                        </Link>
-                        <div className="dropdown-divider"></div>
-                        <button className="dropdown-item logout-btn" onClick={logout}>
-                          <i className="fas fa-sign-out-alt me-2"></i> Logout
-                        </button>
-                      </>
-                    )}
-                  </div>
-                )}
               </div>
             </div>
           </div>

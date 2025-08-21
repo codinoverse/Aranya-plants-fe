@@ -1,171 +1,145 @@
-.newsletter {
-    background: linear-gradient(90deg, #059669 0%, #047857 100%);
-    color: #fff;
-    border-radius: 1rem;
-    padding: 2rem 1rem;
-    box-shadow: 0 2px 16px 0 rgba(44, 183, 78, 0.08);
-}
+  .newsletter {
+      background: linear-gradient(90deg, #059669 0%, #047857 100%);
+      color: #fff;
+      border-radius: 1rem;
+      padding: 2rem 1rem;
+      box-shadow: 0 2px 16px 0 rgba(44, 183, 78, 0.08);
+  }
 
-.sub-btn {
-    background-color: #2f7405;
+  .sub-btn {
+      background-color: #2f7405;
+      color: white;
+      border-radius: 2rem;
+      padding: 0.5rem 2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border: none;
+      transition: background 0.2s;
+  }
+
+  .addtc {
+    background-color: #189202;
     color: white;
+    border-color:  #189202;
+    border-radius: 25px;
+    padding: 6px 12px;
+  }
+
+
+
+  .sub-btn:hover {
+      background-color: #146c43;
+  }
+
+  .care-section {
+    background: #e9fdf3;
     border-radius: 2rem;
-    padding: 0.5rem 2rem;
+    padding: 2.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  .care-select {
+    border-radius: 2rem;
+    border: 1.5px solid #e5e7eb;
+    background: #fff;
+    font-size: 1.08em;
+    padding: 0.5em 2.2em 0.5em 1em;
+    box-shadow: 0 1px 6px 0 rgba(44, 183, 78, 0.04);
+    transition: border 0.18s, box-shadow 0.18s, transform 0.22s cubic-bezier(.4,1.4,.6,1);
+    color: #232e39;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    appearance: none;
+    position: relative;
+    outline: none;
+  }
+  .care-select:focus, .care-select:hover {
+    border-color: #b7c5d3;
+    box-shadow: 0 0 0 2px #b7c5d344, 0 4px 24px 0 rgba(44, 183, 78, 0.08);
+    background: #f8fafc;
+    color: #232e39;
+    transform: scale(1.025);
+  }
+  .care-section .card {
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.08);
+    transition: box-shadow 0.22s cubic-bezier(.4,1.4,.6,1);
+    overflow: hidden;
+    background: #fff;
+  }
+  .care-section .card-img-top {
+    border-radius: 1rem 1rem 0 0;
+    object-fit: cover;
+    height: 180px;
+    transition: transform 0.28s cubic-bezier(.4,1.4,.6,1);
+  }
+  .care-section .card:hover .card-img-top {
+    transform: scale(1.06) rotate(-1deg);
+  }
+  .care-section .badge {
+    font-size: 0.92em;
+    border-radius: 1rem;
+    padding: 0.4em 1em;
+  }
+  .tips {
+    border-left: 4px solid #428711;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    color: #033e01;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    font-size: 0.98em;
+  }
+  .care-pagination {
+    --bs-pagination-padding-x: 1rem;
+    --bs-pagination-padding-y: 0.5rem;
+    --bs-pagination-font-size: 1.08rem;
+    --bs-pagination-color: #232e39;
+    --bs-pagination-bg: #fff;
+    --bs-pagination-border-width: 0;
+    --bs-pagination-border-radius: 1.5rem;
+    --bs-pagination-hover-color: #047a06e0;
+    --bs-pagination-hover-bg: #f8fafc;
+    --bs-pagination-active-color: #fff;
+    --bs-pagination-active-bg: linear-gradient(90deg, #139707 0%, #34d399 100%);
+    --bs-pagination-active-border-color: #059669;
+    --bs-pagination-focus-box-shadow: 0 0 0 2px #05966933;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .care-pagination .page-item {
+    margin: 0 0.15rem;
+  }
+  .care-pagination .page-link {
+    border-radius: 1.5rem !important;
     border: none;
-    transition: background 0.2s;
-}
-
-.addtc {
-  background-color: #189202;
-  color: white;
-  border-color:  #189202;
-  border-radius: 25px;
-}
-
-
-
-.sub-btn:hover {
-    background-color: #146c43;
-}
-
-.care-section {
-  background: #e9fdf3;
-  border-radius: 2rem;
-  padding: 2.5rem 1rem;
-  margin-bottom: 2rem;
-}
-.care-select {
-  border-radius: 2rem;
-  border: 1.5px solid #e5e7eb;
-  background: #fff;
-  font-size: 1.08em;
-  padding: 0.5em 2.2em 0.5em 1em;
-  box-shadow: 0 1px 6px 0 rgba(44, 183, 78, 0.04);
-  transition: border 0.18s, box-shadow 0.18s, transform 0.22s cubic-bezier(.4,1.4,.6,1);
-  color: #232e39;
-  font-weight: 600;
-  appearance: none;
-  position: relative;
-  outline: none;
-}
-.care-select:focus, .care-select:hover {
-  border-color: #b7c5d3;
-  box-shadow: 0 0 0 2px #b7c5d344, 0 4px 24px 0 rgba(44, 183, 78, 0.08);
-  background: #f8fafc;
-  color: #232e39;
-  transform: scale(1.025);
-}
-.care-section .card {
-  border-radius: 1.25rem;
-  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.08);
-  transition: box-shadow 0.22s cubic-bezier(.4,1.4,.6,1);
-  overflow: hidden;
-  background: #fff;
-}
-.care-section .card-img-top {
-  border-radius: 1rem 1rem 0 0;
-  object-fit: cover;
-  height: 180px;
-  transition: transform 0.28s cubic-bezier(.4,1.4,.6,1);
-}
-.care-section .card:hover .card-img-top {
-  transform: scale(1.06) rotate(-1deg);
-}
-.care-section .badge {
-  font-size: 0.92em;
-  border-radius: 1rem;
-  padding: 0.4em 1em;
-}
-.care-sidebar {
-  background: #fff;
-  border-radius: 1.25rem;
-  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.08);
-  padding: 1.5rem 1.2rem;
-  margin-bottom: 1.5rem;
-}
-.care-sidebar.bg-success {
-  background: linear-gradient(90deg, #059669 0%, #34d399 100%) !important;
-  color: #fff;
-}
-.care-sidebar .btn-dark {
-  background: #232e39;
-  border: none;
-  font-weight: 600;
-}
-.care-sidebar .btn-dark:hover {
-  background: #059669;
-}
-.care-sidebar .input-group .form-control {
-  border-radius: 2rem 0 0 2rem !important;
-  border: none;
-  font-size: 1em;
-}
-.care-sidebar .input-group .btn {
-  border-radius: 0 2rem 2rem 0 !important;
-}
-.tips {
-  border-left: 4px solid #428711;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-  color: #033e01;
-  background: #f8fafc;
-  border-radius: 0.5rem;
-  font-size: 0.98em;
-}
-.care-pagination {
-  --bs-pagination-padding-x: 1rem;
-  --bs-pagination-padding-y: 0.5rem;
-  --bs-pagination-font-size: 1.08rem;
-  --bs-pagination-color: #232e39;
-  --bs-pagination-bg: #fff;
-  --bs-pagination-border-width: 0;
-  --bs-pagination-border-radius: 1.5rem;
-  --bs-pagination-hover-color: #047a06e0;
-  --bs-pagination-hover-bg: #f8fafc;
-  --bs-pagination-active-color: #fff;
-  --bs-pagination-active-bg: linear-gradient(90deg, #139707 0%, #34d399 100%);
-  --bs-pagination-active-border-color: #059669;
-  --bs-pagination-focus-box-shadow: 0 0 0 2px #05966933;
-  display: flex;
-  gap: 0.5rem;
-}
-.care-pagination .page-item {
-  margin: 0 0.15rem;
-}
-.care-pagination .page-link {
-  border-radius: 1.5rem !important;
-  border: none;
-  background: var(--bs-pagination-bg);
-  color: var(--bs-pagination-color);
-  font-weight: 600;
-  min-width: 2.5rem;
-  min-height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px 6px 0 rgba(44, 183, 78, 0.06);
-  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
-}
-.care-pagination .page-link:hover, .care-pagination .page-link:focus {
-  background: var(--bs-pagination-hover-bg);
-  color: var(--bs-pagination-hover-color);
-  box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.10);
-  transform: scale(1.08);
-}
-.care-pagination .page-item.active .page-link {
-  background: var(--bs-pagination-active-bg);
-  color: var(--bs-pagination-active-color);
-  font-weight: 700;
-  box-shadow: 0 4px 16px 0 rgba(44, 183, 78, 0.16);
-  border: none;
-  transform: scale(1.12);
-}
-.care-pagination .page-item.disabled .page-link {
-  background: #f3f4f6;
-  color: #b7c5d3;
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
-}
+    background: var(--bs-pagination-bg);
+    color: var(--bs-pagination-color);
+    font-weight: 600;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 6px 0 rgba(44, 183, 78, 0.06);
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
+  }
+  .care-pagination .page-link:hover, .care-pagination .page-link:focus {
+    background: var(--bs-pagination-hover-bg);
+    color: var(--bs-pagination-hover-color);
+    box-shadow: 0 2px 12px 0 rgba(44, 183, 78, 0.10);
+    transform: scale(1.08);
+  }
+  .care-pagination .page-item.active .page-link {
+    background: var(--bs-pagination-active-bg);
+    color: var(--bs-pagination-active-color);
+    font-weight: 700;
+    box-shadow: 0 4px 16px 0 rgba(44, 183, 78, 0.16);
+    border: none;
+    transform: scale(1.12);
+  }
+  .care-pagination .page-item.disabled .page-link {
+    background: #f3f4f6;
+    color: #b7c5d3;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
