@@ -162,7 +162,7 @@ const PlantAuth = ({ onClose }) => {
           <div className="auth-header">
             <img src={Logo} className="main-logo" alt="Logo" />
             <h2 className="auth-title">
-              {currentView === 'login' ? 'Login' : 'Join Us Today'}
+              {currentView === 'login' ? 'Login' : 'Sign Up'}
             </h2>
           </div>
 
