@@ -1,7 +1,9 @@
+/* Main App Styles */
 .pcs-plant-care-app {
   min-height: 100vh;
-
   background-image: url('/src/assets/wallpaper1.jpg');
+  background-size: cover;
+  background-position: center;
   padding: 40px 15px;
 }
 
@@ -27,19 +29,55 @@
   border-radius: 50%;
 }
 
+/* Header Styles */
 .pcs-support-header {
   text-align: center;
   margin-bottom: 40px;
 }
 
 .pcs-support-header h2 {
-  color: #2e7d32;
+  color: #4caf50;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .pcs-support-header p {
   color: #ffffff;
   font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Navigation Tabs */
+.pcs-nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+}
+
+.pcs-nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pcs-nav-btn:hover {
+  background: rgba(76, 175, 80, 0.3);
+}
+
+.pcs-nav-btn.active {
+  background: #024805;
+  color: white;
+}
+
+.pcs-nav-btn i {
+  margin-right: 8px;
 }
 
 /* Support Cards */
@@ -49,10 +87,8 @@
   background: #f1f8f6;
   border-radius: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
 }
-
-
-
 
 .pcs-support-card:hover {
   transform: translateY(-5px);
@@ -65,50 +101,55 @@
   margin-bottom: 15px;
 }
 
-.pcs-btn-support {
-  background-color: #4caf50;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-weight: 500;
+.pcs-support-card h5 {
+  color: #2e7d32;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.pcs-btn-support:hover {
-  background-color: #388e3c;
+.pcs-support-card p {
+  color: #555;
+  margin: 0;
 }
 
 /* Form Styling */
 .pcs-support-form {
+  background: rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 12px;
   margin-bottom: 40px;
-  border-left: 5px solid #036814;
-}
-
-.label {
-  color: white;
+  border-left: 5px solid #4caf50;
 }
 
 .pcs-support-form h4 {
   color: #ffffff;
   margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.pcs-form-container .form-label {
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 
 .pcs-btn-submit {
-  background-color: #065509;
+  background-color: #4caf50;
   border: none;
   color: white;
   border-radius: 8px;
   padding: 12px 30px;
   font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .pcs-btn-submit:hover {
-  background-color: #ffffff;
-  color: #065509;
+  background-color: #45a049;
+  transform: translateY(-1px);
 }
 
-/* FAQ */
+/* FAQ Section */
 .pcs-faq-section {
   background: #ffffff;
   padding: 30px;
@@ -117,8 +158,9 @@
 }
 
 .pcs-faq-section h4 {
-  color: #287609;
+  color: #2e7d32;
   margin-bottom: 25px;
+  font-weight: 600;
 }
 
 .pcs-faq-item {
@@ -129,9 +171,291 @@
 
 .pcs-faq-item:last-child {
   border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .pcs-faq-item h6 {
   font-weight: 600;
   color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.pcs-faq-item p {
+  color: #555;
+  margin: 0;
+}
+
+/* Ticket Status Styles */
+.pcs-ticket-search {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid #07570f;
+}
+
+.pcs-ticket-search h4 {
+  font-weight: 600;
+}
+
+.pcs-search-container .form-control {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+}
+
+.pcs-btn-search {
+  background-color: #114b04;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pcs-btn-search:hover {
+  background-color: #032d0f;
+  transform: translateY(-1px);
+}
+
+/* Ticket Cards */
+.pcs-tickets-section h4 {
+  font-weight: 600;
+}
+
+.pcs-tickets-container {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.pcs-ticket-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  border-left: 4px solid #1c7a07;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pcs-ticket-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pcs-ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.pcs-ticket-id h6 {
+  color: #013c04;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.pcs-ticket-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.pcs-ticket-date {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pcs-ticket-date small {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.pcs-ticket-body h6 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pcs-ticket-category {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.pcs-ticket-category i {
+  margin-right: 5px;
+  color: #056f08;
+}
+
+.pcs-ticket-description {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.pcs-latest-response {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.pcs-latest-response small {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.pcs-response-text {
+  margin: 5px 0 0 0;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+}
+
+.pcs-ticket-footer {
+  text-align: right;
+}
+
+.pcs-btn-view-details {
+  background-color: #1c4a03;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pcs-btn-view-details:hover {
+  background-color: #31770d;
+}
+
+.pcs-btn-view-details i {
+  margin-right: 5px;
+}
+
+/* Status Badges */
+.pcs-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-open {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.badge-progress {
+  background-color: #fff3e0;
+  color: #000000;
+}
+
+.badge-resolved {
+  background-color: #e8f5e8;
+  color: #4caf50;
+}
+
+.badge-closed {
+  background-color: #fafafa;
+  color: #616161;
+}
+
+.badge-high {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.badge-medium {
+  background-color: #fff8e1;
+  color: #f9a825;
+}
+
+.badge-low {
+  background-color: #e8f5e8;
+  color: #388e3c;
+}
+
+
+
+/* Status Guide */
+.pcs-status-guide {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.pcs-status-guide h5 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.pcs-guide-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.pcs-guide-item span:last-child {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pcs-main-content {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .pcs-nav-tabs {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .pcs-nav-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .pcs-ticket-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .pcs-ticket-date {
+    text-align: left;
+  }
+  
+  .pcs-guide-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pcs-plant-care-app {
+    padding: 20px 10px;
+  }
+  
+  .pcs-support-form, 
+  .pcs-ticket-search {
+    padding: 20px;
+  }
+  
+  .pcs-btn-search {
+    margin-top: 10px;
+  }
 }
