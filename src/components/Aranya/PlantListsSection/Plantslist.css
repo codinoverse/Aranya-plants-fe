@@ -44,13 +44,18 @@
 .plantslist-section .sidebar, .plantslist-section #sidebar {
   background: rgba(224, 247, 239, 0.85);
   border-radius: 1.5rem;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.2rem;
   box-shadow: 0 4px 24px 0 rgba(44, 183, 78, 0.10);
   min-height: 420px;
   border: 1.5px solid #d1fae5;
   backdrop-filter: blur(4px);
   margin-bottom: 2rem;
 }
+
+.plantslist-section nav {
+  margin-left: -80px;
+}
+
 .plantslist-section .nav-link.active, .plantslist-section .nav-link:hover {
   background: linear-gradient(90deg,#059669 0%,#34d399 100%);
   color: #fff !important;
@@ -98,9 +103,9 @@
 .plantslist-section #sidebar .nav-link {
   position: relative;
   font-weight: 600;
-  color: #198754 !important;
+  color: #147b5b!important;
   border-radius: 1.5rem;
-  padding-left: 2.2rem;
+  padding-left: 3rem;
   margin-bottom: 0.5rem;
   transition: background 0.18s, color 0.18s, box-shadow 0.18s;
 }
@@ -238,3 +243,15 @@
   color: #059669;
   border-color: #34d399;
 } 
+
+.cart-btn{
+  width: 150px;
+}
+
+
+#sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* ensures text doesn't wrap */
+  
+}
